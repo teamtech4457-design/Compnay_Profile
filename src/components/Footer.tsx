@@ -1,0 +1,168 @@
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Sparkles } from "lucide-react";
+
+interface FooterProps {
+  onNavigate: (page: string) => void;
+}
+
+export function Footer({ onNavigate }: FooterProps) {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+  ];
+
+  return (
+    <footer className="relative mt-auto border-t border-purple-500/20 bg-background/50 backdrop-blur-sm">
+      {/* Decorative gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-purple-500/5 to-transparent pointer-events-none" />
+      
+      <div className="container mx-auto px-4 lg:px-8 py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Company Info */}
+          <div className="space-y-6">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="relative">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 flex items-center justify-center glow-cyan">
+                    <span className="text-lg font-bold text-white">CW</span>
+                  </div>
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 blur-lg opacity-50" />
+                </div>
+                <div>
+                  <div className="text-lg bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                    Campaign Waala
+                  </div>
+                  <div className="text-xs text-muted-foreground">Decentralized Finance</div>
+                </div>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Revolutionizing financial opportunities through blockchain-powered referral technology and community-driven growth.
+              </p>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex space-x-3">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="w-10 h-10 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 flex items-center justify-center text-muted-foreground hover:text-cyan-400 transition-all hover:scale-110"
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Quick Links
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { label: "About Us", page: "about" },
+                { label: "How It Works", page: "how-it-works" },
+                { label: "Contact Support", page: "contact" },
+                { label: "Login / Sign Up", page: "auth" },
+              ].map((link, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => onNavigate(link.page)}
+                    className="text-muted-foreground hover:text-cyan-400 transition-colors text-sm group flex items-center"
+                  >
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-cyan-400 mr-0 group-hover:mr-2 transition-all duration-300" />
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-lg mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Legal
+            </h3>
+            <ul className="space-y-3">
+              {[
+                "Privacy Policy",
+                "Terms of Service",
+                "Cookie Policy",
+                "Compliance & Security",
+              ].map((item, index) => (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-purple-400 transition-colors text-sm group flex items-center"
+                  >
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-purple-400 mr-0 group-hover:mr-2 transition-all duration-300" />
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg mb-6 bg-gradient-to-r from-pink-400 to-amber-400 bg-clip-text text-transparent">
+              Get in Touch
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex items-start space-x-3 group">
+                <div className="w-8 h-8 rounded-lg glass border border-purple-500/20 group-hover:border-cyan-500/50 flex items-center justify-center text-cyan-400 flex-shrink-0 transition-all">
+                  <Mail size={16} />
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground mb-1">Email</div>
+                  <a href="mailto:support@campaignwaala.com" className="text-sm hover:text-cyan-400 transition-colors">
+                    support@campaignwaala.com
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start space-x-3 group">
+                <div className="w-8 h-8 rounded-lg glass border border-purple-500/20 group-hover:border-cyan-500/50 flex items-center justify-center text-cyan-400 flex-shrink-0 transition-all">
+                  <Phone size={16} />
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground mb-1">Phone</div>
+                  <a href="tel:+15551234567" className="text-sm hover:text-cyan-400 transition-colors">
+                    +1 (555) 123-4567
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start space-x-3 group">
+                <div className="w-8 h-8 rounded-lg glass border border-purple-500/20 group-hover:border-cyan-500/50 flex items-center justify-center text-cyan-400 flex-shrink-0 transition-all">
+                  <MapPin size={16} />
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground mb-1">Location</div>
+                  <p className="text-sm">Global Operations</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-purple-500/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground">
+              &copy; {currentYear} Campaign Waala. All rights reserved.
+            </p>
+            
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
+              <span>Powered by Blockchain Technology</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
