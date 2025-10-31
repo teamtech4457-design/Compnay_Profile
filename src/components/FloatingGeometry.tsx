@@ -1,7 +1,7 @@
 import { useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, MeshDistortMaterial, Sphere, Box, Torus } from "@react-three/drei";
-import { Group } from "three";
+import { Group, Mesh } from "three";
 
 interface GeometrySceneProps {
   variant?: "sphere" | "cube" | "torus" | "multi";
@@ -9,6 +9,7 @@ interface GeometrySceneProps {
 
 function GeometryScene({ variant = "sphere" }: GeometrySceneProps) {
   const groupRef = useRef<Group>(null);
+  const meshRef = useRef<Mesh>(null);
 
   useFrame((state) => {
     if (groupRef.current) {
@@ -82,7 +83,7 @@ function GeometryScene({ variant = "sphere" }: GeometrySceneProps) {
   if (variant === "cube") {
     return (
       <Float speed={2} rotationIntensity={1} floatIntensity={0.5}>
-        <Box args={[2, 2, 2]} ref={groupRef}>
+        <Box args={[2, 2, 2]} ref={meshRef}>
           <MeshDistortMaterial
             color="#8b5cf6"
             metalness={0.9}
@@ -100,7 +101,7 @@ function GeometryScene({ variant = "sphere" }: GeometrySceneProps) {
   if (variant === "torus") {
     return (
       <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-        <Torus args={[2, 0.6, 32, 100]} ref={groupRef}>
+        <Torus args={[2, 0.6, 32, 100]} ref={meshRef}>
           <MeshDistortMaterial
             color="#ec4899"
             metalness={0.9}
@@ -118,7 +119,7 @@ function GeometryScene({ variant = "sphere" }: GeometrySceneProps) {
   // Default: sphere
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-      <Sphere args={[2, 64, 64]} ref={groupRef}>
+      <Sphere args={[2, 64, 64]} ref={meshRef}>
         <MeshDistortMaterial
           color="#06b6d4"
           metalness={0.9}

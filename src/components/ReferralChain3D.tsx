@@ -1,14 +1,14 @@
 import { useRef, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Sphere, MeshDistortMaterial, Float } from "@react-three/drei";
-import { Vector3, BufferGeometry, Group, Points } from "three";
+import { OrbitControls, Sphere, MeshDistortMaterial, Float, Line } from "@react-three/drei";
+import { Vector3, Group, Points as ThreePoints } from "three";
 import { TrendingUp } from "lucide-react";
 
 function Chain() {
   const groupRef = useRef<Group>(null);
   const [hovered, setHovered] = useState<number | null>(null);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (groupRef.current) {
       groupRef.current.rotation.y += 0.003;
     }
@@ -35,17 +35,16 @@ function Chain() {
         const start = new Vector3(...nodes[from].position);
         const end = new Vector3(...nodes[to].position);
         const points = [start, end];
-        const lineGeometry = new BufferGeometry().setFromPoints(points);
         
         return (
-          <line key={`line-${idx}`} geometry={lineGeometry}>
-            <lineBasicMaterial 
-              color="#8b5cf6" 
-              linewidth={2}
-              transparent
-              opacity={0.6}
-            />
-          </line>
+          <Line
+            key={`line-${idx}`}
+            points={points}
+            color="#8b5cf6"
+            lineWidth={2}
+            transparent
+            opacity={0.6}
+          />
         );
       })}
 
@@ -94,7 +93,7 @@ function Chain() {
 
 function RotatingCoin() {
   const coinRef = useRef<Group>(null);
-  const particlesRef = useRef<Points>(null);
+  const particlesRef = useRef<ThreePoints>(null);
 
   useFrame((state) => {
     if (coinRef.current) {

@@ -1,7 +1,9 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Sparkles } from "lucide-react";
 
+type Page = "home" | "about" | "how-it-works" | "contact" | "auth";
+
 interface FooterProps {
-  onNavigate: (page: string) => void;
+  onNavigate: (page: Page) => void;
 }
 
 export function Footer({ onNavigate }: FooterProps) {
@@ -65,10 +67,10 @@ export function Footer({ onNavigate }: FooterProps) {
             </h3>
             <ul className="space-y-3">
               {[
-                { label: "About Us", page: "about" },
-                { label: "How It Works", page: "how-it-works" },
-                { label: "Contact Support", page: "contact" },
-                { label: "Login / Sign Up", page: "auth" },
+                { label: "About Us", page: "about" as Page },
+                { label: "How It Works", page: "how-it-works" as Page },
+                { label: "Contact Support", page: "contact" as Page },
+                { label: "Login / Sign Up", page: "auth" as Page },
               ].map((link, index) => (
                 <li key={index}>
                   <button
