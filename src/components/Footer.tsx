@@ -17,7 +17,7 @@ export function Footer({ onNavigate }: FooterProps) {
   ];
 
   return (
-    <footer className="relative mt-auto border-t border-purple-500/20 bg-background/50 backdrop-blur-sm">
+    <footer className="relative mt-auto border-t border-purple-500/20 bg-gradient-to-b from-[#0a0a1f] to-[#1a0a2e] backdrop-blur-sm">
       {/* Decorative gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-purple-500/5 to-transparent pointer-events-none" />
       

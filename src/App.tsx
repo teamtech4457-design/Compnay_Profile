@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-import { ChatbotWidget } from "./components/ChatbotWidget";
 import { Home } from "./components/pages/Home";
 import { AboutUs } from "./components/pages/AboutUs";
 import { HowItWorks } from "./components/pages/HowItWorks";
@@ -36,7 +35,6 @@ export default function App() {
       <Header currentPage={currentPage} onNavigate={setCurrentPage} />
       <main className="flex-1">{renderPage()}</main>
       <Footer onNavigate={setCurrentPage} />
-      <ChatbotWidget isActive={currentPage === "contact"} />
       <Toaster />
     </div>
   );

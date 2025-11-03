@@ -3,7 +3,9 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Animated3DIcon } from "../Animated3DIcon";
 
 interface HowItWorksProps {
-  onNavigate: (page: "home" | "about" | "how-it-works" | "contact" | "auth") => void;
+  onNavigate: (
+    page: "home" | "about" | "how-it-works" | "contact" | "auth"
+  ) => void;
 }
 
 export function HowItWorks({ onNavigate }: HowItWorksProps) {
@@ -11,7 +13,8 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
     {
       number: "01",
       title: "Find Your Offer",
-      description: "Browse through our curated selection of high-converting campaigns from premium brands and financial services",
+      description:
+        "Browse through our curated selection of high-converting campaigns from premium brands and financial services",
       icon: "search" as const,
       color: "from-cyan-500 to-blue-500",
       details: [
@@ -24,7 +27,8 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
     {
       number: "02",
       title: "Share Your Link",
-      description: "Generate your unique referral link and share it across your network through optimized channels",
+      description:
+        "Generate your unique referral link and share it across your network through optimized channels",
       icon: "share" as const,
       color: "from-purple-500 to-pink-500",
       details: [
@@ -37,7 +41,8 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
     {
       number: "03",
       title: "Track Performance",
-      description: "Monitor conversions in real-time with our advanced analytics dashboard and AI-powered insights",
+      description:
+        "Monitor conversions in real-time with our advanced analytics dashboard and AI-powered insights",
       icon: "track" as const,
       color: "from-pink-500 to-purple-500",
       details: [
@@ -50,7 +55,8 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
     {
       number: "04",
       title: "Get Paid Instantly",
-      description: "Receive instant payouts directly to your wallet with blockchain-verified transactions",
+      description:
+        "Receive instant payouts directly to your wallet with blockchain-verified transactions",
       icon: "wallet" as const,
       color: "from-amber-500 to-orange-500",
       details: [
@@ -63,39 +69,42 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-gradient-to-b from-[#0a0a1f] via-[#1a0a2e] to-[#0a0a1f]">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden particle-bg">
+      <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full mb-8">
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-            <span className="text-sm text-cyan-400">Simple 4-Step Process</span>
+          <div className="inline-flex items-center space-x-2 px-5 py-2.5 glass rounded-full mb-8 border border-cyan-500/20">
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50" />
+            <span className="text-sm font-medium text-cyan-400">
+              Simple 4-Step Process
+            </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8">
-            <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-glow-cyan">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8">
+            <span className="block bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
               How It Works
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12">
-            Start earning in minutes with our streamlined process designed for maximum efficiency
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-16">
+            Start earning in minutes with our streamlined process designed for
+            maximum efficiency
           </p>
 
           {/* Process Flow Indicator */}
-          <div className="flex items-center justify-center gap-4 max-w-2xl mx-auto">
+          <div className="flex items-center justify-center gap-3 max-w-2xl mx-auto">
             {steps.map((step, index) => (
               <div key={index} className="flex items-center">
-                <div className="glass rounded-full w-12 h-12 flex items-center justify-center text-sm border-2 border-cyan-500/30">
+                <div className="glass rounded-full w-14 h-14 flex items-center justify-center text-base font-semibold border-2 border-cyan-500/30 bg-gray-900/80 hover:border-cyan-400/50 transition-all text-white">
                   {step.number}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-500/50 to-purple-500/50 mx-2" />
+                  <div className="w-12 md:w-16 h-0.5 bg-gradient-to-r from-cyan-500/40 to-purple-500/40 mx-2" />
                 )}
               </div>
             ))}
@@ -112,26 +121,34 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                 key={index}
                 className={`grid lg:grid-cols-2 gap-16 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
-              >
+                }`}>
                 {/* 3D Icon - Alternating sides */}
-                <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                <div
+                  className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                   <div className="relative aspect-square max-w-md mx-auto">
-                    {/* 3D Icon Container */}
-                    <div className="absolute inset-0 glass rounded-3xl border-glow-animated overflow-hidden">
-                      <Animated3DIcon type={step.icon} />
-                    </div>
-
-                    {/* Step number indicator */}
-                    <div className="absolute -top-6 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30">
-                      <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                    {/* Step number indicator - outside top left */}
+                    <div className="absolute -top-8 -left-8 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 bg-gray-900/90 z-10">
+                      <span className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                         {step.number}
                       </span>
                     </div>
 
+                    {/* 3D Icon Container with proper border */}
+                    <div className="relative inset-0 bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-3xl border-2 border-cyan-500/30 overflow-hidden backdrop-blur-sm p-12 hover:border-cyan-400/50 transition-all duration-500 min-h-[400px]">
+                      <Animated3DIcon type={step.icon} />
+                    </div>
+
                     {/* Decorative elements */}
-                    <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
-                    <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
+                    <div
+                      className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`}
+                    />
+                    <div
+                      className={`absolute -top-4 ${
+                        index % 2 === 1 ? "-left-4" : "-right-4"
+                      } w-24 h-24 bg-gradient-to-r ${
+                        step.color
+                      } opacity-20 rounded-full blur-2xl animate-pulse`}
+                    />
                   </div>
                 </div>
 
@@ -141,11 +158,12 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                     {/* Title */}
                     <div>
                       <h2 className="text-4xl md:text-5xl mb-4">
-                        <span className={`bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
+                        <span
+                          className={`bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
                           {step.title}
                         </span>
                       </h2>
-                      <p className="text-xl text-muted-foreground leading-relaxed">
+                      <p className="text-xl text-white/80 leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -153,9 +171,11 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                     {/* Details */}
                     <div className="space-y-4">
                       {step.details.map((detail, i) => (
-                        <div key={i} className="flex items-start space-x-3 group">
+                        <div
+                          key={i}
+                          className="flex items-start space-x-3 group">
                           <CheckCircle2 className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                          <p className="text-muted-foreground group-hover:text-foreground transition-colors">
+                          <p className="text-white/70 group-hover:text-white transition-colors">
                             {detail}
                           </p>
                         </div>
@@ -168,8 +188,7 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                         <Button
                           size="lg"
                           onClick={() => onNavigate("auth")}
-                          className="relative bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 glow-cyan group"
-                        >
+                          className="relative bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 glow-cyan group">
                           Start Earning Now
                           <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
@@ -186,7 +205,7 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
       {/* Benefits Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" />
-        
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="glass rounded-3xl p-12 md:p-20 border-glow-animated">
             <div className="text-center mb-16">
@@ -195,7 +214,7 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                   Why Choose Campaign Waala?
                 </span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-white/80 max-w-2xl mx-auto">
                 The most advanced referral platform in the market
               </p>
             </div>
@@ -204,30 +223,37 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
               {[
                 {
                   title: "Zero Risk",
-                  description: "No upfront costs or hidden fees. Start earning immediately.",
+                  description:
+                    "No upfront costs or hidden fees. Start earning immediately.",
                   stat: "0%",
                   label: "Platform Fee",
                 },
                 {
                   title: "Fast Payouts",
-                  description: "Get paid instantly with blockchain-verified transactions.",
+                  description:
+                    "Get paid instantly with blockchain-verified transactions.",
                   stat: "<1min",
                   label: "Payout Time",
                 },
                 {
                   title: "High Rewards",
-                  description: "Industry-leading commission rates and multi-tier bonuses.",
+                  description:
+                    "Industry-leading commission rates and multi-tier bonuses.",
                   stat: "30%+",
                   label: "Commission",
                 },
               ].map((benefit, i) => (
-                <div key={i} className="text-center p-8 glass rounded-2xl hover:scale-105 transition-transform">
+                <div
+                  key={i}
+                  className="text-center p-8 glass rounded-2xl hover:scale-105 transition-transform">
                   <div className="text-5xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
                     {benefit.stat}
                   </div>
-                  <div className="text-sm text-cyan-400 mb-4">{benefit.label}</div>
+                  <div className="text-sm text-cyan-400 mb-4">
+                    {benefit.label}
+                  </div>
                   <h3 className="text-2xl mb-3">{benefit.title}</h3>
-                  <p className="text-muted-foreground">{benefit.description}</p>
+                  <p className="text-white/70">{benefit.description}</p>
                 </div>
               ))}
             </div>
