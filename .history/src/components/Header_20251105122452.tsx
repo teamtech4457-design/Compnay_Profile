@@ -1,5 +1,5 @@
-import { Menu, X, Sun, Moon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 
 type Page = "home" | "about" | "how-it-works" | "contact" | "auth";
@@ -11,23 +11,6 @@ interface HeaderProps {
 
 export function Header({ currentPage, onNavigate }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Track dark mode state, initializing from existing document class
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      return document.documentElement.classList.contains("dark");
-    }
-    return false;
-  });
-
-  // Toggle document class on darkMode change
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
 
   const navItems = [
     { id: "home" as Page, label: "Home" },
@@ -85,8 +68,8 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             ))}
           </nav>
 
-          {/* CTA Button and Theme Toggle */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* CTA Button */}
+          <div className="hidden lg:block">
             <Button
               onClick={() => onNavigate("auth")}
               className="relative bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 glow-cyan"
@@ -94,19 +77,6 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               Get Started
               <div className="absolute inset-0 rounded-md bg-gradient-to-r from-cyan-500 to-purple-500 blur-lg opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
             </Button>
-
-            {/* Theme Toggle Button */}
-            <button
-              aria-label="Toggle light and dark mode"
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-md bg-muted hover:bg-muted/70 transition-colors"
-            >
-              {darkMode ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
-              )}
-            </button>
           </div>
 
           {/* Mobile Menu Button */}

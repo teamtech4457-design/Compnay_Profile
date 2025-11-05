@@ -12,12 +12,11 @@ export function Footer({ onNavigate }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/campaign_wala?igsh=Z3FyY2pxZGthMTFu", label: "Instagram" },
-];
-
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+  ];
 
   const legalLinks = [
     { label: "Privacy Policy", onClick: () => setShowPrivacyPolicy(true) },

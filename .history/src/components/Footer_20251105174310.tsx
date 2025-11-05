@@ -9,15 +9,14 @@ interface FooterProps {
 
 export function Footer({ onNavigate }: FooterProps) {
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
-  const currentYear = new Date().getFullYear();
+  const currentYear const socialLinks = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+     = new Date().getFullYear();
 
-  const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/campaign_wala?igsh=Z3FyY2pxZGthMTFu", label: "Instagram" },
-];
-
+ { icon: Instagram, href: "#", label: "Instagram" },
+  ];
 
   const legalLinks = [
     { label: "Privacy Policy", onClick: () => setShowPrivacyPolicy(true) },

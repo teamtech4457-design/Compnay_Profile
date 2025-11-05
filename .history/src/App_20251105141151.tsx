@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-// import { ChatbotWidget } from "./components/ChatbotWidget";
+import { ChatbotWidget } from "./components/ChatbotWidget";
 import { Home } from "./components/pages/Home";
 import { AboutUs } from "./components/pages/AboutUs";
 import { HowItWorks } from "./components/pages/HowItWorks";

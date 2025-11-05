@@ -56,13 +56,13 @@ export function ContactSupport() {
       description: "24/7 email support",
       color: "from-cyan-500 to-blue-500",
     },
-    // {
-    //   icon: MessageSquare,
-    //   title: "Live Chat",
-    //   value: "Available 24/7",
-    //   description: "Instant response",
-    //   color: "from-purple-500 to-pink-500",
-    // },
+    {
+      icon: MessageSquare,
+      title: "Live Chat",
+      value: "Available 24/7",
+      description: "Instant response",
+      color: "from-purple-500 to-pink-500",
+    },
     {
       icon: Phone,
       title: "Phone Support",
@@ -170,7 +170,6 @@ export function ContactSupport() {
 
                   {/* <div>
                     <label className="block text-sm mb-2">Subject</label>
-
                     <Input
                       type="text"
                       placeholder="How can we help you?"

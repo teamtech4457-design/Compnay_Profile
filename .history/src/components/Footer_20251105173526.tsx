@@ -12,12 +12,11 @@ export function Footer({ onNavigate }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/campaign_wala?igsh=Z3FyY2pxZGthMTFu", label: "Instagram" },
-];
-
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+  ];
 
   const legalLinks = [
     { label: "Privacy Policy", onClick: () => setShowPrivacyPolicy(true) },
@@ -28,9 +27,9 @@ export function Footer({ onNavigate }: FooterProps) {
 
   return (
     <>
-<footer className="relative mt-auto border-t border-purple-500/20 bg-background/50 backdrop-blur-sm">
+      <footer className="relative mt-auto border-t border-purple-500/20 bg-gradient-to-b from-[#0a0a1f] to-[#1a0a2e] backdrop-blur-sm">
         {/* Decorative gradient */}
-<div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-purple-500/5 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-purple-500/5 to-transparent pointer-events-none" />
         
         <div className="container mx-auto px-4 lg:px-8 py-16 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -186,7 +185,7 @@ export function Footer({ onNavigate }: FooterProps) {
       {/* Privacy Policy Overlay - Integrated in same component */}
       {showPrivacyPolicy && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-<div className="relative bg-background/50 border border-purple-500/20 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden mx-4 backdrop-blur-sm">
+          <div className="relative bg-gradient-to-b from-[#0a0a1f] to-[#1a0a2e] border border-purple-500/30 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden mx-4">
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-purple-500/20">
               <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
