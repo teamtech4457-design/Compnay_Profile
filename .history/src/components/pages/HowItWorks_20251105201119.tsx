@@ -25,7 +25,7 @@ function InstantPaymentGif() {
 
   return (
     <div className="relative">
-      <div className="bg-card rounded-2xl p-6 shadow-xl border border-border w-64 mx-auto">
+      <div className="bg-white rounded-2xl p-6 shadow-xl border border-slate-200 w-64 mx-auto">
         <div className="relative h-32 flex items-center justify-center mb-4">
           <div 
             className="absolute w-20 h-20 rounded-full border-2 border-blue-400/20 animate-ping"
@@ -50,13 +50,13 @@ function InstantPaymentGif() {
               <div
                 key={index}
                 className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 ${
-                  isActive ? 'bg-accent' : 'bg-card'
+                  isActive ? 'bg-slate-100' : 'bg-white'
                 }`}
               >
                 <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center`}>
                   <Icon className="w-4 h-4 text-white" />
                 </div>
-                <span className={`text-sm font-medium ${isActive ? 'text-accent-foreground' : 'text-muted-foreground'}`}>
+                <span className={`text-sm font-medium ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
                   {feature.text}
                 </span>
               </div>
@@ -69,6 +69,7 @@ function InstantPaymentGif() {
     </div>
   );
 }
+
 export function HowItWorks({ onNavigate }: HowItWorksProps) {
   const steps = [
     {

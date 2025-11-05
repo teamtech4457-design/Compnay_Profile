@@ -25,7 +25,7 @@ function InstantPaymentGif() {
 
   return (
     <div className="relative">
-      <div className="bg-card rounded-2xl p-6 shadow-xl border border-border w-64 mx-auto">
+      <div className="bg-white rounded-2xl p-6 shadow-xl border border-slate-200 w-64 mx-auto">
         <div className="relative h-32 flex items-center justify-center mb-4">
           <div 
             className="absolute w-20 h-20 rounded-full border-2 border-blue-400/20 animate-ping"
@@ -50,13 +50,13 @@ function InstantPaymentGif() {
               <div
                 key={index}
                 className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 ${
-                  isActive ? 'bg-accent' : 'bg-card'
+                  isActive ? 'bg-slate-100' : 'bg-white'
                 }`}
               >
                 <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center`}>
                   <Icon className="w-4 h-4 text-white" />
                 </div>
-                <span className={`text-sm font-medium ${isActive ? 'text-accent-foreground' : 'text-muted-foreground'}`}>
+                <span className={`text-sm font-medium ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
                   {feature.text}
                 </span>
               </div>
@@ -69,6 +69,7 @@ function InstantPaymentGif() {
     </div>
   );
 }
+
 export function HowItWorks({ onNavigate }: HowItWorksProps) {
   const steps = [
     {
@@ -200,49 +201,69 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       </div>
                       
                       {/* Exciting Offers Card */}
-                    {/* Exciting Offers Card */}
-                      <div className="w-full max-w-sm bg-background rounded-2xl shadow-xl overflow-hidden border border-border hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                        {/* Header */}
-                        <div className="p-6 text-center bg-gradient-to-br from-blue-500/10 to-indigo-500/10">
-                          <h3 className="text-2xl font-bold text-foreground mb-2">Exciting Offers</h3>
-                          <p className="text-muted-foreground text-sm">Unlock amazing rewards</p>
-                        </div>
+                      <div className="w-full max-w-sm 
+  bg-white dark:bg-gray-900
+  rounded-2xl shadow-xl dark:shadow-black/40
+  overflow-hidden border border-gray-200 dark:border-gray-700
+  hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+  
+  {/* Header */}
+  <div className="p-6 text-center 
+    bg-gradient-to-br from-blue-50 to-indigo-50 
+    dark:from-gray-800 dark:to-gray-900">
+    <h3 className="text-2xl font-bold 
+      text-gray-900 dark:text-gray-100 mb-2">
+      Exciting Offers
+    </h3>
+    <p className="text-gray-600 dark:text-gray-400 text-sm">
+      Unlock amazing rewards
+    </p>
+  </div>
 
-                        {/* HOT Badge */}
-                        <div className="px-6 pt-4 flex justify-end">
-                          <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                            HOT
-                          </span>
-                        </div>
+  {/* HOT Badge */}
+  <div className="px-6 pt-4 flex justify-end">
+    <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+      HOT
+    </span>
+  </div>
 
-                        {/* Content */}
-                        <div className="p-6">
-                          <div className="flex items-start space-x-3 mb-4">
-                            <div className="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                              <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                              </svg>
-                            </div>
-                            <div>
-                              <h4 className="font-bold text-foreground text-lg">Zero-Fee Account</h4>
-                              <p className="text-muted-foreground text-sm mt-1">Start investing with no annual maintenance charges</p>
-                            </div>
-                          </div>
+  {/* Content */}
+  <div className="p-6">
+    <div className="flex items-start space-x-3 mb-4">
+      <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center flex-shrink-0">
+        {/* Replace svg below with whatever icon you use */}
+        <svg className="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+        </svg>
+      </div>
+      <div>
+        <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg">Zero-Fee Account</h4>
+        <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+          Start investing with no annual maintenance charges
+        </p>
+      </div>
+    </div>
 
-                          {/* Earn Section */}
-                          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 mb-4">
-                            <p className="text-green-400 font-bold text-center text-sm">
-                              Earn ₹500 per lead
-                            </p>
-                          </div>
+    {/* Earn Section */}
+    <div className="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-3 mb-4">
+      <p className="text-green-800 dark:text-green-400 font-bold text-center text-sm">
+        Earn ₹500 per lead
+      </p>
+    </div>
 
-                          {/* Share Button */}
-                          <button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-default">
-                            Share
-                            <ArrowRight className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </div>
+    {/* Share Button */}
+    <button className="w-full bg-gradient-to-r from-green-500 to-emerald-600
+      text-white font-semibold py-3 px-4 rounded-lg 
+      hover:from-green-600 hover:to-emerald-700 
+      transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-default">
+      Share
+      {/* ArrowRight icon */}
+      <ArrowRight className="w-4 h-4" />
+    </button>
+  </div>
+</div>
+
 
                       {/* Decorative elements */}
                       <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
@@ -333,8 +354,7 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
-
-                                   ) : step.title === "Track Performance" ? (
+                  ) : step.title === "Track Performance" ? (
                     // Performance Dashboard for Track Performance step
                     <div className="relative max-w-md mx-auto">
                       {/* Step number indicator */}
@@ -345,11 +365,11 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       </div>
                       
                       {/* Performance Dashboard Card */}
-                      <div className="w-full max-w-sm bg-background rounded-2xl shadow-xl overflow-hidden border border-border hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         {/* Header */}
-                        <div className="p-6 bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-b border-border">
-                          <h3 className="text-xl font-bold text-foreground mb-2">Campaign Performance</h3>
-                          <p className="text-muted-foreground text-sm">Quick overview of your campaign performance</p>
+                        <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 border-b border-gray-200">
+                          <h3 className="text-xl font-bold text-gray-900 mb-2">Campaign Performance</h3>
+                          <p className="text-gray-600 text-sm">Quick overview of your campaign performance</p>
                         </div>
 
                         {/* Stats Grid */}
@@ -357,12 +377,12 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                           {/* Current Balance */}
                           <div className="flex items-center justify-between">
                             <div>
-                              <p className="text-sm text-muted-foreground">Current Balance</p>
-                              <p className="text-2xl font-bold text-foreground">5,200.75</p>
-                              <p className="text-xs text-muted-foreground">Available for withdrawal</p>
+                              <p className="text-sm text-gray-600">Current Balance</p>
+                              <p className="text-2xl font-bold text-gray-900">5,200.75</p>
+                              <p className="text-xs text-gray-500">Available for withdrawal</p>
                             </div>
-                            <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
-                              <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                              <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                               </svg>
                             </div>
@@ -370,15 +390,15 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
 
                           {/* Earnings Stats */}
                           <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
-                              <p className="text-sm text-blue-400">Total Earnings</p>
-                              <p className="text-lg font-bold text-foreground">18,500.00</p>
-                              <p className="text-xs text-blue-400/80">Earned this month</p>
+                            <div className="bg-blue-50 rounded-lg p-3">
+                              <p className="text-sm text-blue-600">Total Earnings</p>
+                              <p className="text-lg font-bold text-blue-900">18,500.00</p>
+                              <p className="text-xs text-blue-700">Earned this month</p>
                             </div>
-                            <div className="bg-amber-500/10 rounded-lg p-3 border border-amber-500/20">
-                              <p className="text-sm text-amber-400">Total Bonus</p>
-                              <p className="text-lg font-bold text-foreground">1,500.00</p>
-                              <p className="text-xs text-amber-400/80">Referral bonuses</p>
+                            <div className="bg-amber-50 rounded-lg p-3">
+                              <p className="text-sm text-amber-600">Total Bonus</p>
+                              <p className="text-lg font-bold text-amber-900">1,500.00</p>
+                              <p className="text-xs text-amber-700">Referral bonuses</p>
                             </div>
                           </div>
 
@@ -400,7 +420,6 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
-                    
                   ) : step.title === "Get Paid Instantly" ? (
                     // Instant Payment Gif for Get Paid Instantly step
                     <div className="relative max-w-md mx-auto">

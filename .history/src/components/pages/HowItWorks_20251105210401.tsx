@@ -25,7 +25,7 @@ function InstantPaymentGif() {
 
   return (
     <div className="relative">
-      <div className="bg-card rounded-2xl p-6 shadow-xl border border-border w-64 mx-auto">
+      <div className="bg-white rounded-2xl p-6 shadow-xl border border-slate-200 w-64 mx-auto">
         <div className="relative h-32 flex items-center justify-center mb-4">
           <div 
             className="absolute w-20 h-20 rounded-full border-2 border-blue-400/20 animate-ping"
@@ -50,13 +50,13 @@ function InstantPaymentGif() {
               <div
                 key={index}
                 className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 ${
-                  isActive ? 'bg-accent' : 'bg-card'
+                  isActive ? 'bg-slate-100' : 'bg-white'
                 }`}
               >
                 <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center`}>
                   <Icon className="w-4 h-4 text-white" />
                 </div>
-                <span className={`text-sm font-medium ${isActive ? 'text-accent-foreground' : 'text-muted-foreground'}`}>
+                <span className={`text-sm font-medium ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
                   {feature.text}
                 </span>
               </div>
@@ -69,6 +69,7 @@ function InstantPaymentGif() {
     </div>
   );
 }
+
 export function HowItWorks({ onNavigate }: HowItWorksProps) {
   const steps = [
     {
@@ -402,45 +403,41 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                     </div>
                     
                   ) : step.title === "Get Paid Instantly" ? (
-                    // Instant Payment Gif for Get Paid Instantly step
-                    <div className="relative max-w-md mx-auto">
+                    // Here is the updated Get Paid Instantly JSX with dark theme support:
+                    <div className="relative max-w-md mx-auto dark:bg-slate-900 dark:border-slate-700">
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
+                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 dark:border-cyan-400/50 z-10">
                         <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
-                      
+
                       {/* Instant Payment Gif Component */}
                       <InstantPaymentGif />
 
-                      {/* Decorative elements */}
+                      {/* Decorative Elements */}
                       <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
                   ) : (
-                    // 3D Icon for other steps
+                    // For other steps - your original JSX here
                     <div className="relative aspect-square max-w-md mx-auto">
-                      {/* 3D Icon Container */}
                       <div className="absolute inset-0 glass rounded-3xl border-glow-animated overflow-hidden">
                         <Animated3DIcon type={step.icon} />
                       </div>
-
                       {/* Step number indicator */}
                       <div className="absolute -top-06 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30">
                         <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
-
-                      {/* Decorative elements */}
+                      {/* Decorative Elements */}
                       <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
                   )}
                 </div>
-
-                {/* Content */}
+                {/* Content Section */}
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="space-y-6">
                     {/* Title */}
@@ -467,7 +464,7 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       ))}
                     </div>
 
-                    {/* CTA */}
+                    {/* Call to Action */}
                     {index === steps.length - 1 && (
                       <div className="pt-4">
                         <Button
