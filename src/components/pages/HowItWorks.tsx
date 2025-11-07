@@ -154,6 +154,15 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
             transform: translateX(100%);
           }
         }
+        
+        /* Hide scrollbar for process flow indicator */
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
       `}</style>
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden particle-bg">
@@ -180,14 +189,14 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
           </p>
 
           {/* Process Flow Indicator */}
-          <div className="flex items-center justify-center gap-4 max-w-2xl mx-auto">
+          <div className="flex items-center justify-center gap-1 sm:gap-2 max-w-[286px] md:max-w-2xl mx-auto overflow-x-auto px-4 hide-scrollbar">
             {steps.map((step, index) => (
-              <div key={index} className="flex items-center">
-                <div className="glass rounded-full w-12 h-12 flex items-center justify-center text-sm border-2 border-cyan-500/30">
+              <div key={index} className="flex items-center flex-shrink-0">
+                <div className="glass rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xs sm:text-sm border-2 border-cyan-500/30">
                   {step.number}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-500/50 to-purple-500/50 mx-2" />
+                  <div className="w-6 sm:w-16 h-0.5 bg-gradient-to-r from-cyan-500/50 to-purple-500/50 mx-1 sm:mx-2" />
                 )}
               </div>
             ))}
@@ -196,13 +205,13 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
       </section>
 
       {/* Steps Section */}
-      <section className="py-32">
+      <section className="py-16 sm:py-24 md:py-32">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="space-y-32">
+          <div className="space-y-16 sm:space-y-24 md:space-y-32">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`grid lg:grid-cols-2 gap-16 items-center ${
+                className={`grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}>
                 {/* Animation/Visual Section */}
@@ -212,8 +221,8 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                     // Exciting Offers Card for Find Your Offer step
                     <div className="relative max-w-md mx-auto">
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
-                        <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                      <div className="absolute -top-12 sm:-top-16 md:-top-20 -left-4 sm:-left-6 glass rounded-xl sm:rounded-2xl px-4 py-2 sm:px-6 sm:py-3 border-2 border-cyan-500/30 z-10">
+                        <span className="text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
@@ -295,30 +304,30 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                     </div>
                   ) : step.title === "Share Your Link" ? (
                     // Trackable Link Animation for Share Your Link step
-                    <div className="relative max-w-md mx-auto mt-12">
-                      <div className="w-full p-8 glass rounded-2xl border border-cyan-500/30">
+                    <div className="relative max-w-[286px] md:max-w-md mx-auto pt-12 sm:pt-16 md:pt-20">
+                      <div className="w-full p-6 sm:p-8 glass rounded-2xl border border-cyan-500/30">
                         {/* Header with animated share icon */}
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                           <svg
-                            className="w-7 h-7 text-cyan-400 animate-pulse"
+                            className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-400 animate-pulse flex-shrink-0"
                             viewBox="0 0 24 24"
                             fill="currentColor">
                             <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" />
                           </svg>
-                          <h3 className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                          <h3 className="text-base sm:text-lg md:text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                             Your Unique Trackable Link
                           </h3>
                         </div>
 
                         {/* Link box with shimmer effect */}
-                        <div className="relative bg-background/50 border border-cyan-500/30 rounded-lg px-4 py-4 mb-4 overflow-hidden group">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm text-muted-foreground font-mono truncate flex-1">
+                        <div className="relative bg-background/50 border border-cyan-500/30 rounded-lg px-3 sm:px-4 py-3 sm:py-4 mb-3 sm:mb-4 overflow-hidden group">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-xs sm:text-sm text-muted-foreground font-mono truncate flex-1">
                               https://campaignwaala.com/ref/johndoe/creditcard_ffb
                             </span>
-                            <button className="ml-4 p-2 hover:bg-cyan-500/10 rounded transition-colors cursor-default">
+                            <button className="p-1.5 sm:p-2 hover:bg-cyan-500/10 rounded transition-colors cursor-default flex-shrink-0">
                               <svg
-                                className="w-5 h-5 text-cyan-400"
+                                className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"
                                 fill="none"
                                 stroke="currentColor"
                                 strokeWidth="2"
@@ -344,24 +353,26 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                         </div>
 
                         {/* Action buttons - Made non-clickable with default cursor */}
-                        <div className="flex gap-3">
+                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                           <button
                             disabled
-                            className="flex-1 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm cursor-default">
+                            className="flex-1 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm cursor-default">
                             <svg
-                              className="w-5 h-5"
+                              className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0"
                               fill="currentColor"
                               viewBox="0 0 24 24">
                               <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" />
                             </svg>
-                            Share via Social
+                            <span className="whitespace-nowrap">
+                              Share via Social
+                            </span>
                           </button>
 
                           <button
                             disabled
-                            className="flex-1 glass text-cyan-400 font-semibold py-3 px-4 rounded-lg border-2 border-cyan-500/30 flex items-center justify-center gap-2 text-sm cursor-default">
+                            className="flex-1 glass text-cyan-400 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg border-2 border-cyan-500/30 flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm cursor-default">
                             <svg
-                              className="w-5 h-5"
+                              className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0"
                               fill="none"
                               stroke="currentColor"
                               strokeWidth="2"
@@ -376,14 +387,14 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                               />
                               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                             </svg>
-                            Copy Link
+                            <span className="whitespace-nowrap">Copy Link</span>
                           </button>
                         </div>
                       </div>
 
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30">
-                        <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                      <div className="absolute -top-12 sm:-top-16 md:-top-20 -left-4 sm:-left-6 glass rounded-xl sm:rounded-2xl px-4 py-2 sm:px-6 sm:py-3 border-2 border-cyan-500/30">
+                        <span className="text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
@@ -404,8 +415,8 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                     // Performance Dashboard for Track Performance step
                     <div className="relative max-w-md mx-auto">
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
-                        <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                      <div className="absolute -top-12 sm:-top-16 md:-top-20 -left-4 sm:-left-6 glass rounded-xl sm:rounded-2xl px-4 py-2 sm:px-6 sm:py-3 border-2 border-cyan-500/30 z-10">
+                        <span className="text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
@@ -515,8 +526,8 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                     // Instant Payment Gif for Get Paid Instantly step
                     <div className="relative max-w-md mx-auto">
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
-                        <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                      <div className="absolute -top-12 sm:-top-16 md:-top-20 -left-4 sm:-left-6 glass rounded-xl sm:rounded-2xl px-4 py-2 sm:px-6 sm:py-3 border-2 border-cyan-500/30 z-10">
+                        <span className="text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
@@ -545,8 +556,8 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       </div>
 
                       {/* Step number indicator */}
-                      <div className="absolute -top-06 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30">
-                        <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                      <div className="absolute -top-4 sm:-top-6 md:-top-6 -left-4 sm:-left-6 glass rounded-xl sm:rounded-2xl px-4 py-2 sm:px-6 sm:py-3 border-2 border-cyan-500/30">
+                        <span className="text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
@@ -568,28 +579,28 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
 
                 {/* Content */}
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     {/* Title */}
                     <div>
-                      <h2 className="text-4xl md:text-5xl mb-4">
+                      <h2 className="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4">
                         <span
                           className={`bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
                           {step.title}
                         </span>
                       </h2>
-                      <p className="text-xl text-muted-foreground leading-relaxed">
+                      <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                         {step.description}
                       </p>
                     </div>
 
                     {/* Details */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       {step.details.map((detail, i) => (
                         <div
                           key={i}
-                          className="flex items-start space-x-3 group">
-                          <CheckCircle2 className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                          <p className="text-muted-foreground group-hover:text-foreground transition-colors">
+                          className="flex items-start space-x-2 sm:space-x-3 group">
+                          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                          <p className="text-sm sm:text-base text-muted-foreground group-hover:text-foreground transition-colors">
                             {detail}
                           </p>
                         </div>

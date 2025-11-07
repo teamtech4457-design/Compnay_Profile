@@ -120,7 +120,10 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t bg-white dark:bg-slate-900 shadow-lg">
+        <div
+          className={`lg:hidden border-t shadow-lg ${
+            darkMode ? "bg-slate-900" : "bg-white"
+          }`}>
           <nav className="container mx-auto px-4 py-4 space-y-1">
             {navItems.map((item) => (
               <button
@@ -132,7 +135,9 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 className={`w-full text-left px-4 py-3 rounded-lg transition-all ${
                   currentPage === item.id
                     ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-400 border border-cyan-500/30"
-                    : "text-muted-foreground hover:bg-muted/50"
+                    : darkMode
+                    ? "text-gray-300 hover:bg-slate-800/50"
+                    : "text-gray-700 hover:bg-gray-100"
                 }`}>
                 {item.label}
               </button>
@@ -150,16 +155,20 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             <button
               aria-label="Toggle light and dark mode"
               onClick={() => setDarkMode(!darkMode)}
-              className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg bg-muted hover:bg-muted/70 transition-colors">
+              className={`w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-colors ${
+                darkMode
+                  ? "bg-slate-800 hover:bg-slate-700"
+                  : "bg-gray-100 hover:bg-gray-200"
+              }`}>
               {darkMode ? (
                 <>
                   <Sun className="w-5 h-5 text-yellow-400" />
-                  <span className="text-sm">Light Mode</span>
+                  <span className="text-sm text-gray-200">Light Mode</span>
                 </>
               ) : (
                 <>
                   <Moon className="w-5 h-5 text-gray-700" />
-                  <span className="text-sm">Dark Mode</span>
+                  <span className="text-sm text-gray-700">Dark Mode</span>
                 </>
               )}
             </button>
