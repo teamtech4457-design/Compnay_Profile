@@ -39,28 +39,27 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
     : "bg-white shadow-xl";
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 border-b ${headerBgClass}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 border-b ${headerBgClass}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Updated Logo */}
           <button
             onClick={() => onNavigate("home")}
-            className="flex items-center space-x-3 group"
-          >
+            className="flex items-center space-x-3 group">
             <div className="relative">
-              <img
-                src={cwLogo}
-                alt="CW Logo"
-                className="w-12 h-18 rounded-lg object-cover"
-              />
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 flex items-center justify-center glow-cyan">
+                <span className="text-lg font-black text-white">CW</span>
+              </div>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
             </div>
             <div className="hidden md:block">
-              <div className="text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <div className="text-lg tracking-tight font-extrabold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Campaign Waala
               </div>
-              {/* <div className="text-xs text-muted-foreground -mt-1">
+              <div className="text-xs font-bold text-muted-foreground -mt-1">
                 Decentralized Finance
-              </div> */}
+              </div>
             </div>
           </button>
 
@@ -77,8 +76,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                   currentPage === item.id
                     ? "text-cyan-400"
                     : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
+                }`}>
                 {item.label}
                 {currentPage === item.id && (
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full" />
@@ -91,16 +89,14 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           <div className="hidden lg:flex items-center space-x-4">
             <Button
               onClick={() => onNavigate("auth")}
-              className="relative bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 glow-cyan"
-            >
+              className="relative bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 glow-cyan">
               Get Started
               <div className="absolute inset-0 rounded-md bg-gradient-to-r from-cyan-500 to-purple-500 blur-lg opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
             </Button>
             <button
               aria-label="Toggle light and dark mode"
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-md bg-muted hover:bg-muted/70 transition-colors"
-            >
+              className="p-2 rounded-md bg-muted hover:bg-muted/70 transition-colors">
               {darkMode ? (
                 <Sun className="w-5 h-5 text-yellow-400" />
               ) : (
@@ -110,8 +106,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           </div>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
-          >
+            className="lg:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors">
             {mobileMenuOpen ? (
               <X className="w-6 h-6 text-cyan-400" />
             ) : (
@@ -136,8 +131,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                   currentPage === item.id
                     ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-400 border border-cyan-500/30"
                     : "text-muted-foreground hover:bg-muted/50"
-                }`}
-              >
+                }`}>
                 {item.label}
               </button>
             ))}
@@ -146,10 +140,27 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 onNavigate("auth");
                 setMobileMenuOpen(false);
               }}
-              className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0"
-            >
+              className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0">
               Get Started
             </Button>
+
+            {/* Theme Toggle Button for Mobile */}
+            <button
+              aria-label="Toggle light and dark mode"
+              onClick={() => setDarkMode(!darkMode)}
+              className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg bg-muted hover:bg-muted/70 transition-colors">
+              {darkMode ? (
+                <>
+                  <Sun className="w-5 h-5 text-yellow-400" />
+                  <span className="text-sm">Light Mode</span>
+                </>
+              ) : (
+                <>
+                  <Moon className="w-5 h-5 text-gray-700" />
+                  <span className="text-sm">Dark Mode</span>
+                </>
+              )}
+            </button>
           </nav>
         </div>
       )}
