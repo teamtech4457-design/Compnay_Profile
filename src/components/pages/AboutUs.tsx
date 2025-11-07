@@ -1,5 +1,4 @@
-import { Target, Eye, Heart, Users, Award, Rocket } from "lucide-react";
-import { FloatingGeometry } from "../FloatingGeometry";
+import { Target, Eye, Heart, Users, Award, Rocket, Shield } from "lucide-react";
 import { ReferralChain3D } from "../ReferralChain3D";
 
 export function AboutUs() {
@@ -569,24 +568,5 @@ export function AboutUs() {
         </div>
       </section>
     </div>
-  );
-}
-
-function Shield(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    </svg>
   );
 }

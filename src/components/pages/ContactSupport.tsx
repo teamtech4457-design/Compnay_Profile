@@ -13,7 +13,6 @@ import {
   MessageSquare,
   Phone,
   Send,
-  MapPin,
   Headphones,
   Clock,
 } from "lucide-react";
@@ -356,7 +355,7 @@ export function ContactSupport() {
         </div>
       </section>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%,
           100% {
