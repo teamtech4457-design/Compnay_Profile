@@ -2,6 +2,7 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import cwLogo from "../assets/cw-logo.jpg"; // Correct path for your assets folder
+// import cwLogo from "../assets/cw-logo.jpg"; // Correct path for your assets folder
 
 type Page = "home" | "about" | "how-it-works" | "contact" | "auth";
 
@@ -48,18 +49,19 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             onClick={() => onNavigate("home")}
             className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 flex items-center justify-center glow-cyan">
-                <span className="text-lg font-black text-white">CW</span>
-              </div>
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
+              <img
+                src={cwLogo}
+                alt="CW Logo"
+                className="w-12 h-18 rounded-lg object-cover"
+              />
             </div>
             <div className="hidden md:block">
               <div className="text-lg tracking-tight font-extrabold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Campaign Waala
               </div>
-              <div className="text-xs font-bold text-muted-foreground -mt-1">
+              {/* <div className="text-xs text-muted-foreground -mt-1">
                 Decentralized Finance
-              </div>
+              </div> */}
             </div>
           </button>
 
