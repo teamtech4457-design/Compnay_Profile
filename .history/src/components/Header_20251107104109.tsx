@@ -1,7 +1,7 @@
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import cwLogo from "../assets/cw-logo.jpg"; // Correct path for your assets folder
+import cwLogo from "./assets/cw-logo.jpg"; // Correct path for your assets folder
 
 type Page = "home" | "about" | "how-it-works" | "contact" | "auth";
 
@@ -51,16 +51,16 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               <img
                 src={cwLogo}
                 alt="CW Logo"
-                className="w-12 h-18 rounded-lg object-cover"
+                className="w-10 h-10 rounded-lg object-cover"
               />
             </div>
             <div className="hidden md:block">
               <div className="text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Campaign Waala
               </div>
-              {/* <div className="text-xs text-muted-foreground -mt-1">
+              <div className="text-xs text-muted-foreground -mt-1">
                 Decentralized Finance
-              </div> */}
+              </div>
             </div>
           </button>
 

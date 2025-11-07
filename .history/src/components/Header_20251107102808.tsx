@@ -1,7 +1,6 @@
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import cwLogo from "../assets/cw-logo.jpg"; // Correct path for your assets folder
 
 type Page = "home" | "about" | "how-it-works" | "contact" | "auth";
 
@@ -12,6 +11,8 @@ interface HeaderProps {
 
 export function Header({ currentPage, onNavigate }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Track dark mode state, initializing from existing document class
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
       return document.documentElement.classList.contains("dark");
@@ -19,6 +20,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
     return false;
   });
 
+  // Toggle document class on darkMode change
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -34,37 +36,32 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
     { id: "contact" as Page, label: "Contact" },
   ];
 
-  const headerBgClass = darkMode
-    ? "bg-slate-900 shadow-xl"
-    : "bg-white shadow-xl";
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 border-b ${headerBgClass}`}>
+    <header className="fixed top-0 left-0 right-0 z-50 glass border-b">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Updated Logo */}
+          {/* Logo */}
           <button
             onClick={() => onNavigate("home")}
             className="flex items-center space-x-3 group"
           >
             <div className="relative">
-              <img
-                src={cwLogo}
-                alt="CW Logo"
-                className="w-12 h-18 rounded-lg object-cover"
-              />
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 flex items-center justify-center glow-cyan">
+                <span className="text-lg font-bold text-white">CW</span>
+              </div>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
             </div>
             <div className="hidden md:block">
               <div className="text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Campaign Waala
               </div>
-              {/* <div className="text-xs text-muted-foreground -mt-1">
+              <div className="text-xs text-muted-foreground -mt-1">
                 Decentralized Finance
-              </div> */}
+              </div>
             </div>
           </button>
 
-          {/* Navigation, CTA, Theme Toggle, Mobile Menu... same as before */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <button
@@ -88,6 +85,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             ))}
           </nav>
 
+          {/* CTA Button and Theme Toggle */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button
               onClick={() => onNavigate("auth")}
@@ -96,6 +94,8 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               Get Started
               <div className="absolute inset-0 rounded-md bg-gradient-to-r from-cyan-500 to-purple-500 blur-lg opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
             </Button>
+
+            {/* Theme Toggle Button */}
             <button
               aria-label="Toggle light and dark mode"
               onClick={() => setDarkMode(!darkMode)}
@@ -108,6 +108,8 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               )}
             </button>
           </div>
+
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
@@ -123,7 +125,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t bg-white dark:bg-slate-900 shadow-lg">
+        <div className="lg:hidden glass border-t">
           <nav className="container mx-auto px-4 py-4 space-y-1">
             {navItems.map((item) => (
               <button
