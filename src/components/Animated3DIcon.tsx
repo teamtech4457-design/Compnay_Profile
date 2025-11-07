@@ -176,15 +176,17 @@ interface Animated3DIconProps {
 
 export function Animated3DIcon({ type }: Animated3DIconProps) {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full flex items-center justify-center">
       <Suspense fallback={<LoadingFallback />}>
-        <Canvas camera={{ position: [0, 0, 5], fov: 50 }} gl={{ antialias: true, alpha: true }}>
+        <Canvas camera={{ position: [0, 0, 3.5], fov: 65 }} gl={{ antialias: true, alpha: true }}>
           {/* Lighting */}
           <ambientLight intensity={0.5} />
           <pointLight position={[5, 5, 5]} intensity={1} />
           <pointLight position={[-5, -5, -5]} intensity={0.5} color="#8b5cf6" />
 
-          <IconScene type={type} />
+          <group scale={2.2}>
+            <IconScene type={type} />
+          </group>
         </Canvas>
       </Suspense>
     </div>

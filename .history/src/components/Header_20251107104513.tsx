@@ -58,9 +58,9 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               <div className="text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Campaign Waala
               </div>
-              {/* <div className="text-xs text-muted-foreground -mt-1">
+              <div className="text-xs text-muted-foreground -mt-1">
                 Decentralized Finance
-              </div> */}
+              </div>
             </div>
           </button>
 

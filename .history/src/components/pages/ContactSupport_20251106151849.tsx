@@ -3,8 +3,9 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { Mail, MessageSquare, Phone, Send, MapPin, Headphones, Clock } from "lucide-react";
+import { Mail, MessageSquare, Phone, Send, MapPin } from "lucide-react";
 import { toast } from "sonner";
+import { FloatingGeometry } from "../FloatingGeometry";
 
 export function ContactSupport() {
   const [formData, setFormData] = useState({
@@ -55,6 +56,13 @@ export function ContactSupport() {
       description: "24/7 email support",
       color: "from-cyan-500 to-blue-500",
     },
+    // {
+    //   icon: MessageSquare,
+    //   title: "Live Chat",
+    //   value: "Available 24/7",
+    //   description: "Instant response",
+    //   color: "from-purple-500 to-pink-500",
+    // },
     {
       icon: Phone,
       title: "Phone Support",
@@ -160,6 +168,19 @@ export function ContactSupport() {
                     />
                   </div>
 
+                  {/* <div>
+                    <label className="block text-sm mb-2">Subject</label>
+
+                    <Input
+                      type="text"
+                      placeholder="How can we help you?"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      required
+                      className="glass border-purple-500/30 focus:border-cyan-500 bg-background/50"
+                    />
+                  </div> */}
+
                   <div>
                     <label className="block text-sm mb-2">Message</label>
                     <Textarea
@@ -184,72 +205,21 @@ export function ContactSupport() {
               </div>
             </div>
 
-            {/* Right - Animated Support Visual & Info */}
+            {/* Right - 3D Visual & Info */}
             <div className="space-y-8">
-              {/* Animated Support Visual */}
-              <div className="relative h-[500px] glass rounded-3xl border-glow-animated overflow-hidden flex items-center justify-center">
-                {/* Background Effects */}
-                <div className="absolute inset-0">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
-                </div>
-
-                {/* Support Animation Container */}
-                <div className="relative w-72 h-72">
-                  {/* Animated Blob */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-64 h-64 rounded-blob bg-gradient-to-br from-pink-500 via-purple-500 to-pink-600 opacity-90 animate-blob" 
-                         style={{
-                           animation: 'blob 8s ease-in-out infinite, spin 20s linear infinite',
-                         }} />
+              {/* 3D Element */}
+              <div className="relative h-[500px] glass rounded-3xl border-glow-animated overflow-hidden">
+                <FloatingGeometry variant="torus" />
+                
+                {/* Overlay Info */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="glass rounded-2xl p-8 text-center max-w-sm pointer-events-auto">
+                    <MapPin className="w-12 h-12 mx-auto mb-4 text-cyan-400" />
+                    <h3 className="text-2xl mb-2">Global Presence</h3>
+                    <p className="text-muted-foreground">
+                      Operating in 45+ countries with 24/7 support
+                    </p>
                   </div>
-
-                  {/* Floating Icons */}
-                  <div className="absolute top-8 left-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
-                       style={{ animationDelay: '0s' }}>
-                    <Mail className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  
-                  <div className="absolute top-8 right-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
-                       style={{ animationDelay: '1s' }}>
-                    <Phone className="w-6 h-6 text-orange-400" />
-                  </div>
-                  
-                  <div className="absolute bottom-8 left-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
-                       style={{ animationDelay: '2s' }}>
-                    <MessageSquare className="w-6 h-6 text-pink-400" />
-                  </div>
-                  
-                  <div className="absolute bottom-8 right-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
-                       style={{ animationDelay: '1.5s' }}>
-                    <Clock className="w-6 h-6 text-yellow-400" />
-                  </div>
-
-                  {/* Center Content */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative w-48 h-48 glass rounded-full flex flex-col items-center justify-center shadow-2xl">
-                      {/* Agent Avatar with pulse */}
-                      <div className="relative mb-3">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg animate-pulse-slow">
-                          <Headphones className="w-10 h-10 text-white" />
-                        </div>
-                        {/* Online Status */}
-                        <div className="absolute bottom-0 right-0 w-5 h-5 bg-green-500 rounded-full border-4 border-slate-900 animate-ping-slow" />
-                        <div className="absolute bottom-0 right-0 w-5 h-5 bg-green-500 rounded-full border-4 border-slate-900" />
-                      </div>
-                      
-                      <h3 className="text-xl font-semibold text-white mb-1">24/7 Support</h3>
-                      <p className="text-sm text-slate-400">Always Here to Help</p>
-                    </div>
-                  </div>
-
-                  {/* Orbiting Rings */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-60 h-60 border-2 border-dashed border-cyan-500/20 rounded-full animate-spin-slow" />
-                  </div>
-
-                  {/* Chat Bubbles */}
-                  <div className="absolute top-24 left-28 w-10 h-3 bg-cyan-500/30 rounded-lg animate-bubble-1" />
-                  <div className="absolute top-32 right-24 w-12 h-3 bg-purple-500/30 rounded-lg animate-bubble-2" />
                 </div>
               </div>
 
@@ -314,89 +284,6 @@ export function ContactSupport() {
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
-        }
-        
-        @keyframes blob {
-          0%, 100% { 
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            transform: scale(1);
-          }
-          25% { 
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            transform: scale(1.05);
-          }
-          50% { 
-            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-            transform: scale(0.95);
-          }
-          75% { 
-            border-radius: 70% 30% 40% 60% / 40% 70% 60% 30%;
-            transform: scale(1.02);
-          }
-        }
-        
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        
-        @keyframes bubble-1 {
-          0%, 100% { opacity: 0; transform: translateY(0px) scale(0.8); }
-          10%, 90% { opacity: 1; transform: translateY(-6px) scale(1); }
-        }
-        
-        @keyframes bubble-2 {
-          0%, 100% { opacity: 0; transform: translateY(0px) scale(0.8); }
-          10%, 90% { opacity: 1; transform: translateY(-6px) scale(1); }
-        }
-        
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-        
-        .animate-blob {
-          animation: blob 8s ease-in-out infinite;
-        }
-        
-        .animate-spin-slow {
-          animation: spin 20s linear infinite;
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse 2s ease-in-out infinite;
-        }
-        
-        .animate-ping-slow {
-          animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-        
-        .animate-bubble-1 {
-          animation: bubble-1 4s ease-in-out infinite;
-        }
-        
-        .animate-bubble-2 {
-          animation: bubble-2 4s ease-in-out infinite 2s;
-        }
-        
-        .rounded-blob {
-          border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-        }
-        
-        @keyframes ping {
-          0% { transform: scale(1); opacity: 1; }
-          75%, 100% { transform: scale(2); opacity: 0; }
-        }
-        
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-        }
-      `}</style>
     </div>
   );
 }
