@@ -58,7 +58,7 @@ export function ContactSupport() {
     {
       icon: Phone,
       title: "Phone Support",
-      value: "+ 919782099748",
+      value: "+1 (555) 123-4567",
       description: "Mon-Fri, 9AM-6PM EST",
       color: "from-pink-500 to-amber-500",
     },

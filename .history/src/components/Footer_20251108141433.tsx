@@ -229,7 +229,7 @@ export function Footer({ onNavigate }: FooterProps) {
                     If you have any grievance or complaint with respect to our Platform, please contact our Grievance Officer: <br />
                     Name: [Enter Name Here] <br />
                     Email: support@campaignwaala.in <br />
-                    Contact: +91 9782099748 <br />
+                    Contact: +91  <br />
                     Working Hours: Mon–Fri, 10:00 AM – 6:00 PM IST
                   </p>
                 </div>

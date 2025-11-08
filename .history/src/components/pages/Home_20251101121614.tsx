@@ -117,7 +117,7 @@ export function Home({ onNavigate }: HomeProps) {
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 glass rounded-full px-6 py-3 glow-purple">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-                    {/* <span className="text-sm">Interactive 3D Network</span> */}
+                    <span className="text-sm">Interactive 3D Network</span>
                   </div>
                 </div>
 

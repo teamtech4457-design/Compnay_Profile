@@ -11,8 +11,6 @@ interface FooterProps {
 export function Footer({ onNavigate }: FooterProps) {
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
   const [showTermsOfService, setShowTermsOfService] = useState(false);
-  const [showCookiePolicy, setShowCookiePolicy] = useState(false);
-  const [showComplianceSecurity, setShowComplianceSecurity] = useState(false);
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -24,16 +22,18 @@ export function Footer({ onNavigate }: FooterProps) {
   const legalLinks = [
     { label: "Privacy Policy", onClick: () => setShowPrivacyPolicy(true) },
     { label: "Terms of Service", onClick: () => setShowTermsOfService(true) },
-    { label: "Cookie Policy", onClick: () => setShowCookiePolicy(true) },
-    { label: "Compliance & Security", onClick: () => setShowComplianceSecurity(true) },
+    { label: "Cookie Policy", href: "#" },
+    { label: "Compliance & Security", href: "#" },
   ];
 
   return (
     <>
       <footer className="relative mt-auto border-t border-purple-500/20 bg-background/50 backdrop-blur-sm">
+        {/* Decorative gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-purple-500/5 to-transparent pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 py-16 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Company Info */}
             <div className="space-y-6">
               <div>
                 <div className="flex items-center space-x-3 mb-4">
@@ -68,6 +68,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 ))}
               </div>
             </div>
+            {/* Quick Links */}
             <div>
               <h3 className="text-lg mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 Quick Links
@@ -91,6 +92,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 ))}
               </ul>
             </div>
+            {/* Legal */}
             <div>
               <h3 className="text-lg mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Legal
@@ -119,6 +121,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 ))}
               </ul>
             </div>
+            {/* Contact Info */}
             <div>
               <h3 className="text-lg mb-6 bg-gradient-to-r from-pink-400 to-amber-400 bg-clip-text text-transparent">
                 Get in Touch
@@ -158,6 +161,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </ul>
             </div>
           </div>
+          {/* Bottom Bar */}
           <div className="mt-16 pt-8 border-t border-purple-500/20">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-sm text-muted-foreground">
@@ -171,8 +175,7 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
       </footer>
-
-      {/* Privacy Policy Modal */}
+      {/* Privacy Policy Overlay */}
       {showPrivacyPolicy && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="relative bg-background/50 border border-purple-500/20 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden mx-4 backdrop-blur-sm">
@@ -189,69 +192,13 @@ export function Footer({ onNavigate }: FooterProps) {
             </div>
             <div className="p-6 overflow-y-auto max-h-[70vh]">
               <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
-                {/* Privacy Policy content is retained as-is */}
-                <p className="text-cyan-400 font-semibold">
-                  This Privacy Policy applies to access and use of the software including Web Application, and any other relevant medium. The website by the name "Campaignwala" is owned by Campaignwala and operated by Codessey. (together referred to interchangeably as “we,” “our,” or “Campaignwala”). Campaignwala enables agents to sell various financial and non-financial products and services such as Demat account, credit, saving accounts, etc., through our technology platform and earn money (“Services”).
-                </p>
-                <p>
-                  We at Campaignwala are committed to protecting the privacy and security of our users (“you”, “your”, “user(s)”, or “subscriber(s)”). Your privacy is important, and maintaining your trust is paramount to us. This Privacy Policy (“Privacy Policy”) explains how we collect, use, process, disclose, and safeguard your information when you access and use our Services through our website and mobile app (collectively referred to as the “Platform”) located at: https://www.campaignwala.com/, which shall be incorporated into and subject to the Terms of Service of the Platform and shall be read harmoniously and in conjunction.
-                </p>
-                <p>
-                  Our Platform and Services are primarily available for use within India only.
-                </p>
-                <p>
-                  Please read this Privacy Policy carefully to understand our policies and practices regarding your information and how we will treat it. Your continued use of our Platform is an affirmation that you have read the Privacy Policy, understand it, assent and consent to its terms and conditions, including subsequent changes and amendments. If you do not agree to the terms, you are requested not to use or access our website.
-                </p>
-                <div>
-                  <h3 className="text-cyan-400 font-semibold mb-3">WHAT INFORMATION DO WE COLLECT?</h3>
-                  <p>
-                    We collect Personal Information (as defined below) from you when you register with us on our Platform. When you start using the Services, we ask you to provide certain information as part of the registration process and in the course of your interaction with the Platform. Campaignwala collects Personal Information when you visit/use/register with Campaignwala, when you use emailed products or services, when you visit Campaignwala pages or the pages of certain Campaignwala partners, affiliates, or group companies, and when you enter promotions or sweepstakes.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-cyan-400 font-semibold mb-3">HOW DO WE USE YOUR INFORMATION?</h3>
-                  <p>
-                    We use the Personal and Non-Personal Information provided by you to create your account, verify your identity, and process your transactions on our Platform, customize the advertising and content you see, provide personalized user experience, fulfil your requests for products and services, improve our services, contact you, conduct research, and provide anonymous reporting for internal and external clients.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-cyan-400 font-semibold mb-3">TO WHOM DO WE DISCLOSE YOUR INFORMATION?</h3>
-                  <p>
-                    Campaignwala does not rent, sell, or share personal information about you with non-affiliated companies except to provide the products or services you’ve requested, or under the following circumstances: to trusted partners, to comply with legal obligations, to protect the rights, property, or safety of Campaignwala and its users, during any corporate restructuring, or for any other purpose disclosed at the time you provide the information.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-cyan-400 font-semibold mb-3">PRIVACY QUESTIONS AND GRIEVANCE REDRESSAL</h3>
-                  <p>
-                    If you have any questions, concerns, or suggestions regarding our Privacy Policy, please reach out to us at: support@campaignwaala.in
-                  </p>
-                  <p className="mt-3">
-                    If you have any grievance or complaint with respect to our Platform, please contact our Grievance Officer: <br />
-                    Name: [Enter Name Here] <br />
-                    Email: support@campaignwaala.in <br />
-                    Contact: +91 9782099748 <br />
-                    Working Hours: Mon–Fri, 10:00 AM – 6:00 PM IST
-                  </p>
-                </div>
-                <p className="text-xs text-purple-400/70 border-t border-purple-500/20 pt-4">
-                  Last updated: {new Date().toLocaleDateString()}
-                </p>
-                <div className="flex justify-center pt-6">
-                  <button
-                    onClick={() => setShowPrivacyPolicy(false)}
-                    className="px-6 py-3 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 text-muted-foreground hover:text-cyan-400 transition-all flex items-center space-x-2"
-                  >
-                    <X size={18} />
-                    <span>Close Privacy Policy</span>
-                  </button>
-                </div>
+                {/* ...Place your Privacy Policy content here just as you have already... */}
               </div>
             </div>
           </div>
         </div>
       )}
-
-      {/* Terms of Service Modal */}
+      {/* Terms of Service Overlay */}
       {showTermsOfService && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="relative bg-background/50 border border-purple-500/20 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden mx-4 backdrop-blur-sm">
@@ -363,125 +310,6 @@ export function Footer({ onNavigate }: FooterProps) {
                   >
                     <X size={18} />
                     <span>Close Terms</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Cookie Policy Modal */}
-      {showCookiePolicy && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="relative bg-background/50 border border-purple-500/20 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden mx-4 backdrop-blur-sm">
-            <div className="flex items-center justify-between p-6 border-b border-purple-500/20">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Cookie Policy
-              </h2>
-              <button
-                onClick={() => setShowCookiePolicy(false)}
-                className="w-8 h-8 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 flex items-center justify-center text-muted-foreground hover:text-cyan-400 transition-all"
-              >
-                <X size={20} />
-              </button>
-            </div>
-            <div className="p-6 overflow-y-auto max-h-[70vh]">
-              <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
-                <p>
-                  This Cookie Policy explains how Campaignwaala uses cookies and similar technologies on our platform (website and mobile app). By continuing to use our services, you consent to the use of cookies as described here.
-                </p>
-                <p>
-                  Cookies are small data files stored on your device by your browser when you visit our platform. They help us recognise your device, enhance your user experience, improve our services, and provide secure access.
-                </p>
-                <h3 className="text-cyan-400 font-semibold">Types of Cookies We Use</h3>
-                <ul className="list-disc ml-5 space-y-2">
-                  <li><strong>Strictly Necessary Cookies:</strong> Essential for operating our website and enabling secure access to services (such as login, account management, fraud prevention).</li>
-                  <li><strong>Performance and Analytics Cookies:</strong> Used to collect information about how users interact with our website to improve performance, content, and features.</li>
-                  <li><strong>Functionality Cookies:</strong> Help remember your preferences like language or settings to personalize your experience.</li>
-                  <li><strong>Targeting and Advertising Cookies:</strong> May be used to deliver relevant ads and promotions based on your interests. We may collaborate with third-party ad service providers.</li>
-                </ul>
-                <p>
-                  We may allow select third-party partners (analytics, marketing, payment gateways) to set cookies on our platform. These partners have their own cookie and privacy policies.
-                </p>
-                <p>
-                  You can manage cookies through your browser or device settings. Blocking cookies may affect the platform’s functionality and your experience. By using our platform, you agree to our use of cookies as described.
-                </p>
-                <p>
-                  This policy may be updated occasionally and changes will be posted on our website.
-                </p>
-                <p>
-                  For questions regarding this Cookie Policy, please contact support@campaignwaala.in
-                </p>
-                <p className="text-xs text-purple-400/70 border-t border-purple-500/20 pt-4">
-                  Last updated: {new Date().toLocaleDateString()}
-                </p>
-                <div className="flex justify-center pt-6">
-                  <button
-                    onClick={() => setShowCookiePolicy(false)}
-                    className="px-6 py-3 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 text-muted-foreground hover:text-cyan-400 transition-all flex items-center space-x-2"
-                  >
-                    <X size={18} />
-                    <span>Close Cookie Policy</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Compliance & Security Modal */}
-      {showComplianceSecurity && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="relative bg-background/50 border border-purple-500/20 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden mx-4 backdrop-blur-sm">
-            <div className="flex items-center justify-between p-6 border-b border-purple-500/20">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Compliance & Security
-              </h2>
-              <button
-                onClick={() => setShowComplianceSecurity(false)}
-                className="w-8 h-8 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 flex items-center justify-center text-muted-foreground hover:text-cyan-400 transition-all"
-              >
-                <X size={20} />
-              </button>
-            </div>
-            <div className="p-6 overflow-y-auto max-h-[70vh]">
-              <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
-                <p>
-                  Campaignwaala is committed to protecting user data in line with applicable Indian data privacy laws, including the Information Technology Act, 2000 and associated rules.
-                </p>
-                <p>
-                  We implement technical, physical, and administrative safeguards, including encryption, firewalls, secure servers, and access controls to protect personal information from unauthorized access, disclosure, alteration, or destruction.
-                </p>
-                <p>
-                  Campaignwaala complies with relevant financial, KYC, anti-money laundering standards, and TRAI guidelines to ensure lawful and ethical operations.
-                </p>
-                <p>
-                  Users must protect their own account credentials and promptly report any suspected security breaches or unauthorized access.
-                </p>
-                <p>
-                  In case of data breach affecting your personal information, Campaignwaala will notify affected parties as required by law.
-                </p>
-                <p>
-                  We partner with service providers adhering to strict security standards but are not responsible for their practices. Users should review third-party policies carefully.
-                </p>
-                <p>
-                  This policy is reviewed and updated periodically to reflect changes in regulations or technology. Updates will be posted on our platform.
-                </p>
-                <p>
-                  For any questions or concerns about Compliance & Security, please contact support@campaignwaala.in
-                </p>
-                <p className="text-xs text-purple-400/70 border-t border-purple-500/20 pt-4">
-                  Last updated: {new Date().toLocaleDateString()}
-                </p>
-                <div className="flex justify-center pt-6">
-                  <button
-                    onClick={() => setShowComplianceSecurity(false)}
-                    className="px-6 py-3 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 text-muted-foreground hover:text-cyan-400 transition-all flex items-center space-x-2"
-                  >
-                    <X size={18} />
-                    <span>Close Compliance & Security</span>
                   </button>
                 </div>
               </div>
