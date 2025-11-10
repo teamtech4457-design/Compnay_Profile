@@ -19,69 +19,6 @@ function InstantPaymentGif() {
   }, []);
 
   const features = [
-    { icon: Zap, text: 'Instant Payout', color: 'from-blue-400 to-blue-600' },
-    { icon: Shield, text: 'Blockchain Verified', color: 'from-green-400 to-green-600' }
-  ];
-
-  return (
-    <div className="relative">
-      <div className="bg-white rounded-2xl p-6 shadow-xl border border-slate-200 w-64 mx-auto">
-        <div className="relative h-32 flex items-center justify-center mb-4">
-          <div 
-            className="absolute w-20 h-20 rounded-full border-2 border-blue-400/20 animate-ping"
-            style={{ animationDuration: '1.5s' }}
-          />
-          
-          <div className={`relative w-16 h-16 rounded-full bg-gradient-to-br ${features[active].color} flex items-center justify-center shadow-lg transition-all duration-500`}>
-            {active === 0 ? (
-              <Zap className="w-8 h-8 text-white" />
-            ) : (
-              <Shield className="w-8 h-8 text-white" />
-            )}
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            const isActive = active === index;
-            
-            return (
-              <div
-                key={index}
-                className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 ${
-                  isActive ? 'bg-slate-100' : 'bg-white'
-                }`}
-              >
-                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center`}>
-                  <Icon className="w-4 h-4 text-white" />
-                </div>
-                <span className={`text-sm font-medium ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
-                  {feature.text}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      
-      <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${features[active].color} opacity-10 blur-2xl rounded-2xl transition-all duration-700`} />
-    </div>
-  );
-}
-
-// Instant Payment Animation Component
-function InstantPaymentGif() {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % 2);
-    }, 1500);
-    return () => clearInterval(timer);
-  }, []);
-
-  const features = [
     { icon: Zap, text: "Instant Payout", color: "from-blue-400 to-blue-600" },
     {
       icon: Shield,
