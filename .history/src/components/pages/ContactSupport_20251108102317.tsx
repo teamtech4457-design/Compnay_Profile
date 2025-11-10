@@ -2,20 +2,8 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
-import {
-  Mail,
-  MessageSquare,
-  Phone,
-  Send,
-  Headphones,
-  Clock,
-} from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Mail, MessageSquare, Phone, Send, MapPin, Headphones, Clock } from "lucide-react";
 import { toast } from "sonner";
 
 export function ContactSupport() {
@@ -35,33 +23,27 @@ export function ContactSupport() {
   const faqs = [
     {
       question: "How do I start earning with Campaign Waala?",
-      answer:
-        "Simply sign up for a free account, browse available campaigns, select the ones that match your audience, and start sharing your unique referral links. You'll earn commissions instantly when someone converts through your link.",
+      answer: "Simply sign up for a free account, browse available campaigns, select the ones that match your audience, and start sharing your unique referral links. You'll earn commissions instantly when someone converts through your link.",
     },
     {
       question: "What are the payout methods and minimums?",
-      answer:
-        "We support multiple payout methods including bank transfer, PayPal, and cryptocurrency (BTC, ETH). There's no minimum payout threshold - you can withdraw your earnings anytime, instantly.",
+      answer: "We support multiple payout methods including bank transfer, PayPal, and cryptocurrency (BTC, ETH). There's no minimum payout threshold - you can withdraw your earnings anytime, instantly.",
     },
     {
       question: "How does the referral tracking work?",
-      answer:
-        "We use blockchain-verified tracking technology to ensure 100% accuracy. Every click, conversion, and commission is recorded on the blockchain, providing complete transparency and preventing fraud.",
+      answer: "We use blockchain-verified tracking technology to ensure 100% accuracy. Every click, conversion, and commission is recorded on the blockchain, providing complete transparency and preventing fraud.",
     },
     {
       question: "Are there any fees or hidden costs?",
-      answer:
-        "Absolutely not. Campaign Waala is completely free to join and use. We don't charge any platform fees, subscription costs, or hidden charges. You keep 100% of your earned commissions.",
+      answer: "Absolutely not. Campaign Waala is completely free to join and use. We don't charge any platform fees, subscription costs, or hidden charges. You keep 100% of your earned commissions.",
     },
     {
       question: "Can I promote multiple campaigns simultaneously?",
-      answer:
-        "Yes! You can promote as many campaigns as you want simultaneously. Our dashboard makes it easy to manage multiple campaigns, track their individual performance, and optimize your strategy.",
+      answer: "Yes! You can promote as many campaigns as you want simultaneously. Our dashboard makes it easy to manage multiple campaigns, track their individual performance, and optimize your strategy.",
     },
     {
       question: "What kind of support do you provide?",
-      answer:
-        "We offer 24/7 customer support through live chat, email, and phone. Our dedicated support team is here to help you with any questions, technical issues, or optimization strategies.",
+      answer: "We offer 24/7 customer support through live chat, email, and phone. Our dedicated support team is here to help you with any questions, technical issues, or optimization strategies.",
     },
   ];
 
@@ -120,10 +102,10 @@ export function ContactSupport() {
                 {contactMethods.map((method, index) => (
                   <div
                     key={index}
-                    className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300 group">
+                    className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300 group"
+                  >
                     <div className="flex items-start space-x-4">
-                      <div
-                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${method.color} flex items-center justify-center flex-shrink-0 glow-cyan`}>
+                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${method.color} flex items-center justify-center flex-shrink-0 glow-cyan`}>
                         <method.icon className="w-7 h-7 text-white" />
                       </div>
                       <div className="flex-1">
@@ -149,8 +131,7 @@ export function ContactSupport() {
                     </span>
                   </h2>
                   <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you within 24
-                    hours
+                    Fill out the form below and we'll get back to you within 24 hours
                   </p>
                 </div>
 
@@ -161,9 +142,7 @@ export function ContactSupport() {
                       type="text"
                       placeholder="John Doe"
                       value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
                       className="glass border-purple-500/30 focus:border-cyan-500 bg-background/50"
                     />
@@ -175,9 +154,7 @@ export function ContactSupport() {
                       type="email"
                       placeholder="john@example.com"
                       value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
                       className="glass border-purple-500/30 focus:border-cyan-500 bg-background/50"
                     />
@@ -188,9 +165,7 @@ export function ContactSupport() {
                     <Textarea
                       placeholder="Tell us more about your inquiry..."
                       value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
                       rows={5}
                       className="glass border-purple-500/30 focus:border-cyan-500 bg-background/50 resize-none"
@@ -200,7 +175,8 @@ export function ContactSupport() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 glow-cyan group">
+                    className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 glow-cyan group"
+                  >
                     Send Message
                     <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -221,37 +197,30 @@ export function ContactSupport() {
                 <div className="relative w-72 h-72">
                   {/* Animated Blob */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div
-                      className="w-64 h-64 rounded-blob bg-gradient-to-br from-pink-500 via-purple-500 to-pink-600 opacity-90 animate-blob"
-                      style={{
-                        animation:
-                          "blob 8s ease-in-out infinite, spin 20s linear infinite",
-                      }}
-                    />
+                    <div className="w-64 h-64 rounded-blob bg-gradient-to-br from-pink-500 via-purple-500 to-pink-600 opacity-90 animate-blob" 
+                         style={{
+                           animation: 'blob 8s ease-in-out infinite, spin 20s linear infinite',
+                         }} />
                   </div>
 
                   {/* Floating Icons */}
-                  <div
-                    className="absolute top-8 left-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
-                    style={{ animationDelay: "0s" }}>
+                  <div className="absolute top-8 left-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
+                       style={{ animationDelay: '0s' }}>
                     <Mail className="w-6 h-6 text-cyan-400" />
                   </div>
-
-                  <div
-                    className="absolute top-8 right-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
-                    style={{ animationDelay: "1s" }}>
+                  
+                  <div className="absolute top-8 right-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
+                       style={{ animationDelay: '1s' }}>
                     <Phone className="w-6 h-6 text-orange-400" />
                   </div>
-
-                  <div
-                    className="absolute bottom-8 left-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
-                    style={{ animationDelay: "2s" }}>
+                  
+                  <div className="absolute bottom-8 left-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
+                       style={{ animationDelay: '2s' }}>
                     <MessageSquare className="w-6 h-6 text-pink-400" />
                   </div>
-
-                  <div
-                    className="absolute bottom-8 right-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
-                    style={{ animationDelay: "1.5s" }}>
+                  
+                  <div className="absolute bottom-8 right-12 w-12 h-12 glass rounded-xl flex items-center justify-center animate-float shadow-lg"
+                       style={{ animationDelay: '1.5s' }}>
                     <Clock className="w-6 h-6 text-yellow-400" />
                   </div>
 
@@ -267,13 +236,9 @@ export function ContactSupport() {
                         <div className="absolute bottom-0 right-0 w-5 h-5 bg-green-500 rounded-full border-4 border-slate-900 animate-ping-slow" />
                         <div className="absolute bottom-0 right-0 w-5 h-5 bg-green-500 rounded-full border-4 border-slate-900" />
                       </div>
-
-                      <h3 className="text-xl font-semibold text-white mb-1">
-                        24/7 Support
-                      </h3>
-                      <p className="text-sm text-slate-400">
-                        Always Here to Help
-                      </p>
+                      
+                      <h3 className="text-xl font-semibold text-white mb-1">24/7 Support</h3>
+                      <p className="text-sm text-slate-400">Always Here to Help</p>
                     </div>
                   </div>
 
@@ -296,15 +261,11 @@ export function ContactSupport() {
                   { value: "98%", label: "Satisfaction Rate" },
                   { value: "50K+", label: "Happy Users" },
                 ].map((stat, i) => (
-                  <div
-                    key={i}
-                    className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform">
+                  <div key={i} className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform">
                     <div className="text-3xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-muted-foreground">
-                      {stat.label}
-                    </div>
+                    <div className="text-sm text-muted-foreground">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -321,9 +282,7 @@ export function ContactSupport() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full mb-6">
               <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-              <span className="text-sm text-purple-400">
-                Frequently Asked Questions
-              </span>
+              <span className="text-sm text-purple-400">Frequently Asked Questions</span>
             </div>
             <h2 className="text-4xl md:text-6xl mb-6">
               <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
@@ -341,7 +300,8 @@ export function ContactSupport() {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="glass rounded-xl px-6 border-purple-500/20 hover:border-cyan-500/40 transition-colors">
+                  className="glass rounded-xl px-6 border-purple-500/20 hover:border-cyan-500/40 transition-colors"
+                >
                   <AccordionTrigger className="text-left hover:text-cyan-400 transition-colors py-6">
                     <span className="text-lg">{faq.question}</span>
                   </AccordionTrigger>
@@ -355,124 +315,86 @@ export function ContactSupport() {
         </div>
       </section>
 
-      <style>{`
+      <style jsx>{`
         @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-12px);
-          }
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-12px); }
         }
-
+        
         @keyframes blob {
-          0%,
-          100% {
+          0%, 100% { 
             border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
             transform: scale(1);
           }
-          25% {
+          25% { 
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             transform: scale(1.05);
           }
-          50% {
+          50% { 
             border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
             transform: scale(0.95);
           }
-          75% {
+          75% { 
             border-radius: 70% 30% 40% 60% / 40% 70% 60% 30%;
             transform: scale(1.02);
           }
         }
-
+        
         @keyframes spin {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
-
+        
         @keyframes bubble-1 {
-          0%,
-          100% {
-            opacity: 0;
-            transform: translateY(0px) scale(0.8);
-          }
-          10%,
-          90% {
-            opacity: 1;
-            transform: translateY(-6px) scale(1);
-          }
+          0%, 100% { opacity: 0; transform: translateY(0px) scale(0.8); }
+          10%, 90% { opacity: 1; transform: translateY(-6px) scale(1); }
         }
-
+        
         @keyframes bubble-2 {
-          0%,
-          100% {
-            opacity: 0;
-            transform: translateY(0px) scale(0.8);
-          }
-          10%,
-          90% {
-            opacity: 1;
-            transform: translateY(-6px) scale(1);
-          }
+          0%, 100% { opacity: 0; transform: translateY(0px) scale(0.8); }
+          10%, 90% { opacity: 1; transform: translateY(-6px) scale(1); }
         }
-
+        
         .animate-float {
           animation: float 3s ease-in-out infinite;
         }
-
+        
         .animate-blob {
           animation: blob 8s ease-in-out infinite;
         }
-
+        
         .animate-spin-slow {
           animation: spin 20s linear infinite;
         }
-
+        
         .animate-pulse-slow {
           animation: pulse 2s ease-in-out infinite;
         }
-
+        
         .animate-ping-slow {
           animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
         }
-
+        
         .animate-bubble-1 {
           animation: bubble-1 4s ease-in-out infinite;
         }
-
+        
         .animate-bubble-2 {
           animation: bubble-2 4s ease-in-out infinite 2s;
         }
-
+        
         .rounded-blob {
           border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
         }
-
+        
         @keyframes ping {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          75%,
-          100% {
-            transform: scale(2);
-            opacity: 0;
-          }
+          0% { transform: scale(1); opacity: 1; }
+          75%, 100% { transform: scale(2); opacity: 0; }
         }
-
+        
         @keyframes pulse {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.05);
-          }
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
         }
       `}</style>
     </div>

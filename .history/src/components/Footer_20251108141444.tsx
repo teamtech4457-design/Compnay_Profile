@@ -18,11 +18,7 @@ export function Footer({ onNavigate }: FooterProps) {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    {
-      icon: Instagram,
-      href: "https://www.instagram.com/campaign_wala?igsh=Z3FyY2pxZGthMTFu",
-      label: "Instagram",
-    },
+    { icon: Instagram, href: "https://www.instagram.com/campaign_wala?igsh=Z3FyY2pxZGthMTFu", label: "Instagram" },
   ];
 
   const legalLinks = [
@@ -52,12 +48,11 @@ export function Footer({ onNavigate }: FooterProps) {
                     <div className="text-lg bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                       Campaignwaala
                     </div>
+                    <div className="text-xs text-muted-foreground">Decentralized Finance</div>
                   </div>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Revolutionizing financial opportunities through
-                  blockchain-powered referral technology and community-driven
-                  growth.
+                  Revolutionizing financial opportunities through blockchain-powered referral technology and community-driven growth.
                 </p>
               </div>
               <div className="flex space-x-3">
@@ -66,7 +61,8 @@ export function Footer({ onNavigate }: FooterProps) {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-10 h-10 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 flex items-center justify-center text-muted-foreground hover:text-cyan-400 transition-all hover:scale-110">
+                    className="w-10 h-10 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 flex items-center justify-center text-muted-foreground hover:text-cyan-400 transition-all hover:scale-110"
+                  >
                     <social.icon size={18} />
                   </a>
                 ))}
@@ -86,7 +82,8 @@ export function Footer({ onNavigate }: FooterProps) {
                   <li key={index}>
                     <button
                       onClick={() => onNavigate(link.page)}
-                      className="text-muted-foreground hover:text-cyan-400 transition-colors text-sm group flex items-center">
+                      className="text-muted-foreground hover:text-cyan-400 transition-colors text-sm group flex items-center"
+                    >
                       <span className="w-0 group-hover:w-2 h-0.5 bg-cyan-400 mr-0 group-hover:mr-2 transition-all duration-300" />
                       {link.label}
                     </button>
@@ -104,14 +101,16 @@ export function Footer({ onNavigate }: FooterProps) {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-muted-foreground hover:text-purple-400 transition-colors text-sm group flex items-center">
+                        className="text-muted-foreground hover:text-purple-400 transition-colors text-sm group flex items-center"
+                      >
                         <span className="w-0 group-hover:w-2 h-0.5 bg-purple-400 mr-0 group-hover:mr-2 transition-all duration-300" />
                         {item.label}
                       </a>
                     ) : (
                       <button
                         onClick={item.onClick}
-                        className="text-muted-foreground hover:text-purple-400 transition-colors text-sm group flex items-center">
+                        className="text-muted-foreground hover:text-purple-400 transition-colors text-sm group flex items-center"
+                      >
                         <span className="w-0 group-hover:w-2 h-0.5 bg-purple-400 mr-0 group-hover:mr-2 transition-all duration-300" />
                         {item.label}
                       </button>
@@ -130,12 +129,8 @@ export function Footer({ onNavigate }: FooterProps) {
                     <Mail size={16} />
                   </div>
                   <div>
-                    <div className="text-xs text-muted-foreground mb-1">
-                      Email
-                    </div>
-                    <a
-                      href="mailto:support@campaignwaala.in"
-                      className="text-sm hover:text-cyan-400 transition-colors">
+                    <div className="text-xs text-muted-foreground mb-1">Email</div>
+                    <a href="mailto:support@campaignwaala.in" className="text-sm hover:text-cyan-400 transition-colors">
                       support@campaignwaala.in
                     </a>
                   </div>
@@ -145,12 +140,8 @@ export function Footer({ onNavigate }: FooterProps) {
                     <Phone size={16} />
                   </div>
                   <div>
-                    <div className="text-xs text-muted-foreground mb-1">
-                      Phone
-                    </div>
-                    <a
-                      href="tel:+919782099748"
-                      className="text-sm hover:text-cyan-400 transition-colors">
+                    <div className="text-xs text-muted-foreground mb-1">Phone</div>
+                    <a href="tel:+919782099748" className="text-sm hover:text-cyan-400 transition-colors">
                       +91 9782099748
                     </a>
                   </div>
@@ -160,9 +151,7 @@ export function Footer({ onNavigate }: FooterProps) {
                     <MapPin size={16} />
                   </div>
                   <div>
-                    <div className="text-xs text-muted-foreground mb-1">
-                      Location
-                    </div>
+                    <div className="text-xs text-muted-foreground mb-1">Location</div>
                     <p className="text-sm">Global Operations</p>
                   </div>
                 </li>
@@ -193,7 +182,8 @@ export function Footer({ onNavigate }: FooterProps) {
               </h2>
               <button
                 onClick={() => setShowPrivacyPolicy(false)}
-                className="w-8 h-8 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 flex items-center justify-center text-muted-foreground hover:text-cyan-400 transition-all">
+                className="w-8 h-8 rounded-lg glass border border-purple-500/20 hover:border-cyan-500/50 flex items-center justify-center text-muted-foreground hover:text-cyan-400 transition-all"
+              >
                 <X size={20} />
               </button>
             </div>
@@ -239,7 +229,7 @@ export function Footer({ onNavigate }: FooterProps) {
                     If you have any grievance or complaint with respect to our Platform, please contact our Grievance Officer: <br />
                     Name: [Enter Name Here] <br />
                     Email: support@campaignwaala.in <br />
-                    Contact: +91 9782099748 <br />
+                    Contact: +91 9782099 <br />
                     Working Hours: Mon–Fri, 10:00 AM – 6:00 PM IST
                   </p>
                 </div>
