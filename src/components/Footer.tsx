@@ -98,13 +98,23 @@ export function Footer({ onNavigate }: FooterProps) {
               <ul className="space-y-3">
                 {legalLinks.map((item, index) => (
                   <li key={index}>
-                    <button
-                      onClick={item.onClick}
-                      className="text-muted-foreground hover:text-purple-400 transition-colors text-sm group flex items-center"
-                    >
-                      <span className="w-0 group-hover:w-2 h-0.5 bg-purple-400 mr-0 group-hover:mr-2 transition-all duration-300" />
-                      {item.label}
-                    </button>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-muted-foreground hover:text-purple-400 transition-colors text-sm group flex items-center"
+                      >
+                        <span className="w-0 group-hover:w-2 h-0.5 bg-purple-400 mr-0 group-hover:mr-2 transition-all duration-300" />
+                        {item.label}
+                      </a>
+                    ) : (
+                      <button
+                        onClick={item.onClick}
+                        className="text-muted-foreground hover:text-purple-400 transition-colors text-sm group flex items-center"
+                      >
+                        <span className="w-0 group-hover:w-2 h-0.5 bg-purple-400 mr-0 group-hover:mr-2 transition-all duration-300" />
+                        {item.label}
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>
