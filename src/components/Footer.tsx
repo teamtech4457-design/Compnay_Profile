@@ -4,6 +4,12 @@ import cwLogo from "../assets/cw-logo.jpg";
 
 type Page = "home" | "about" | "how-it-works" | "contact" | "auth";
 
+type LegalLink = {
+  label: string;
+  href?: string;
+  onClick?: () => void;
+};
+
 interface FooterProps {
   onNavigate: (page: Page) => void;
 }
@@ -21,12 +27,12 @@ export function Footer({ onNavigate }: FooterProps) {
     { icon: Instagram, href: "https://www.instagram.com/campaign_wala?igsh=Z3FyY2pxZGthMTFu", label: "Instagram" },
   ];
 
-  const legalLinks = [
-    { label: "Privacy Policy", onClick: () => setShowPrivacyPolicy(true) },
-    { label: "Terms of Service", onClick: () => setShowTermsOfService(true) },
-    { label: "Cookie Policy", onClick: () => setShowCookiePolicy(true) },
-    { label: "Compliance & Security", onClick: () => setShowComplianceSecurity(true) },
-  ];
+const legalLinks: LegalLink[] = [
+  { label: "Privacy Policy", onClick: () => setShowPrivacyPolicy(true) },
+  { label: "Terms of Service", onClick: () => setShowTermsOfService(true) },
+  { label: "Cookie Policy", onClick: () => setShowCookiePolicy(true) },
+  { label: "Compliance & Security", onClick: () => setShowComplianceSecurity(true) },
+];
 
   return (
     <>
