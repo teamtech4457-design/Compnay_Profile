@@ -150,10 +150,10 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
         }
       `}</style>
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden particle-bg">
+      <section className="relative py-20 md:py-32 overflow-hidden particle-bg">
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute top-20 left-10 w-full sm:w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-full sm:w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
@@ -173,7 +173,7 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
           </p>
 
           {/* Process Flow Indicator */}
-          <div className="flex items-center justify-center gap-4 max-w-2xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-full md:max-w-2xl mx-auto px-2">
             {steps.map((step, index) => (
               <div key={index} className="flex items-center">
                 <div className="glass rounded-full w-12 h-12 flex items-center justify-center text-sm border-2 border-cyan-500/30">
@@ -195,7 +195,7 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
@@ -203,16 +203,16 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                 <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                   {step.title === "Find Your Offer" ? (
                     // Exciting Offers Card for Find Your Offer step
-                    <div className="relative max-w-md mx-auto">
+                    <div className="relative max-w-full sm:max-w-md mx-auto">
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
+                      <div className="absolute -top-10 left-2 sm:-top-20 sm:-left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
                         <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
                       
                       {/* Exciting Offers Card */}
-                      <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="w-full max-w-full sm:max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         {/* Header */}
                         <div className="p-6 text-center bg-gradient-to-br from-blue-50 to-indigo-50">
                           <h3 className="text-2xl font-bold text-gray-900 mb-2">Exciting Offers</h3>
@@ -256,12 +256,12 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       </div>
 
                       {/* Decorative elements */}
-                      <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
+                      <div className={`absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
                   ) : step.title === "Share Your Link" ? (
                     // Trackable Link Animation for Share Your Link step
-                    <div className="relative max-w-md mx-auto mt-12">
+                    <div className="relative max-w-full sm:max-w-md mx-auto mt-12">
                       <div className="w-full p-8 glass rounded-2xl border border-cyan-500/30">
                         {/* Header with animated share icon */}
                         <div className="flex items-center gap-3 mb-6">
@@ -333,28 +333,28 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       </div>
 
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30">
+                      <div className="absolute -top-10 left-2 sm:-top-20 sm:-left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30">
                         <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
 
                       {/* Decorative elements */}
-                      <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
+                      <div className={`absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
                   ) : step.title === "Track Performance" ? (
                     // Performance Dashboard for Track Performance step
-                    <div className="relative max-w-md mx-auto">
+                    <div className="relative max-w-full sm:max-w-md mx-auto">
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
+                      <div className="absolute -top-10 left-2 sm:-top-20 sm:-left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
                         <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
                       </div>
                       
                       {/* Performance Dashboard Card */}
-                      <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                      <div className="w-full max-w-full sm:max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         {/* Header */}
                         <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 border-b border-gray-200">
                           <h3 className="text-xl font-bold text-gray-900 mb-2">Campaign Performance</h3>
@@ -406,14 +406,14 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       </div>
 
                       {/* Decorative elements */}
-                      <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
+                      <div className={`absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
                   ) : step.title === "Get Paid Instantly" ? (
                     // Instant Payment Gif for Get Paid Instantly step
-                    <div className="relative max-w-md mx-auto">
+                    <div className="relative max-w-full sm:max-w-md mx-auto">
                       {/* Step number indicator */}
-                      <div className="absolute -top-20 -left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
+                      <div className="absolute -top-10 left-2 sm:-top-20 sm:-left-6 glass rounded-2xl px-6 py-3 border-2 border-cyan-500/30 z-10">
                         <span className="text-4xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                           {step.number}
                         </span>
@@ -423,12 +423,12 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       <InstantPaymentGif />
 
                       {/* Decorative elements */}
-                      <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
+                      <div className={`absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
                   ) : (
                     // 3D Icon for other steps
-                    <div className="relative aspect-square max-w-md mx-auto">
+                    <div className="relative aspect-square max-w-full sm:max-w-md mx-auto">
                       {/* 3D Icon Container */}
                       <div className="absolute inset-0 glass rounded-3xl border-glow-animated overflow-hidden">
                         <Animated3DIcon type={step.icon} />
@@ -442,7 +442,7 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
                       </div>
 
                       {/* Decorative elements */}
-                      <div className={`absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
+                      <div className={`absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 w-32 h-32 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                       <div className={`absolute -top-4 ${index % 2 === 1 ? '-left-4' : '-right-4'} w-24 h-24 bg-gradient-to-r ${step.color} opacity-20 rounded-full blur-2xl animate-pulse`} />
                     </div>
                   )}
