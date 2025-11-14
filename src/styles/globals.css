@@ -259,10 +259,6 @@ canvas {
 
 
 
-.animate-slide-x {
-  animation: slide-x 12s infinite ease-in-out;
-}
-
 @keyframes slide-x {
   0% { transform: translateX(0); }
   25% { transform: translateX(-100%); }
@@ -270,12 +266,6 @@ canvas {
   75% { transform: translateX(-300%); }
   100% { transform: translateX(0); }
 }
-
-.animate-slide-x {
-  animation: slide-x 16s infinite ease-in-out;
-}
-
-
 
 .animate-slide-x {
   animation: slide-x 16s infinite ease-in-out;
