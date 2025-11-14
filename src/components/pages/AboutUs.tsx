@@ -591,10 +591,10 @@ export function AboutUs() {
     {/* GRID — all screens */}
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 place-items-center">
       {[
-        { name: "Aryo Club", logo: "../../partners/aryo.png" },
-        { name: "Adstool", logo: "../.../partners/adstool.png" },
-        { name: "BankSathi", logo: "../../partners/banksathi.png" },
-        { name: "Voadvisor", logo: "../../partners/voadvisor.png" },
+        { name: "Aryo Club", logo: "/partners/aryo.png" },
+        { name: "Adstool", logo: "/partners/adstool.png" },
+        { name: "BankSathi", logo: "/partners/banksathi.png" },
+        { name: "Voadvisor", logo: "/partners/voadvisor.png" },
       ].map((p, i) => (
         <div key={i} className="flex flex-col items-center space-y-4">
           {/* circular logo */}

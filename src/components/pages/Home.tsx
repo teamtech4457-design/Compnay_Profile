@@ -5,8 +5,8 @@ import { Banknote, PiggyBank, LineChart } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper.css";
-import "swiper/modules/pagination/pagination.css";
-import "swiper/swiper-bundle.css";
+import "swiper/css"
+import "swiper/css/pagination";
 
 
 interface HomeProps {
