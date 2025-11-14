@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-// import { ChatbotWidget } from "./components/ChatbotWidget";
 import { Home } from "./components/pages/Home";
 import { AboutUs } from "./components/pages/AboutUs";
 import { HowItWorks } from "./components/pages/HowItWorks";
@@ -13,6 +13,11 @@ type Page = "home" | "about" | "how-it-works" | "contact" | "auth";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>("home");
+
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [currentPage]);
+
 
   const renderPage = () => {
     switch (currentPage) {

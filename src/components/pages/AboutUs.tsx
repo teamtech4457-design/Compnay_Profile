@@ -567,36 +567,54 @@ export function AboutUs() {
         </a>
       ))}
     </div>
+{/* Partnerships & Tie-Ups */}
+<section className="py-32 relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" />
 
-    {/* Mobile Carousel */}
-    <div className="md:hidden overflow-hidden relative mt-10">
-      <div className="flex animate-slide-x gap-6">
-        {[
-          { name: "Aryo Club", link: "https://aryo.club", logo: "/partners/aryo.png" },
-          { name: "Adstool", link: "https://adstool.in", logo: "/partners/adstool.png" },
-          { name: "BankSathi", link: "https://banksathi.com", logo: "/partners/banksathi.png" },
-          { name: "Voadvisor", link: "https://voadvisor.com", logo: "/partners/voadvisor.png" },
-        ].map((p, i) => (
-          <a
-            key={i}
-            href={p.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              min-w-[80%] glass rounded-3xl p-8 flex items-center justify-center
-              border border-cyan-400/10
-              shadow-[0_0_20px_rgba(0,0,0,0.1)]
-            "
-          >
+  <div className="container mx-auto px-4 lg:px-8 relative z-10">
+
+    {/* Header */}
+    <div className="text-center mb-20">
+      <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full mb-6">
+        <Heart className="w-4 h-4 text-cyan-400" />
+        <span className="text-sm text-cyan-400">Our Tie-Ups</span>
+      </div>
+
+      <h2 className="text-4xl md:text-6xl mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        Trusted Partnerships
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Official collaborations with leading financial and technology platforms.
+      </p>
+    </div>
+
+    {/* GRID — all screens */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 place-items-center">
+      {[
+        { name: "Aryo Club", logo: "../../partners/aryo.png" },
+        { name: "Adstool", logo: "../.../partners/adstool.png" },
+        { name: "BankSathi", logo: "../../partners/banksathi.png" },
+        { name: "Voadvisor", logo: "../../partners/voadvisor.png" },
+      ].map((p, i) => (
+        <div key={i} className="flex flex-col items-center space-y-4">
+          {/* circular logo */}
+          <div className="w-32 h-32 rounded-full glass border border-cyan-400/20 flex items-center justify-center hover:scale-110 transition-all">
             <img
               src={p.logo}
               alt={p.name}
-              className="w-28 h-28 object-contain opacity-90"
+              className="w-20 h-20 rounded-full object-contain opacity-90"
             />
-          </a>
-        ))}
-      </div>
+          </div>
+
+          <p className="text-sm text-muted-foreground">{p.name}</p>
+        </div>
+      ))}
     </div>
+
+  </div>
+</section>
+
+
 
   </div>
 </section>
