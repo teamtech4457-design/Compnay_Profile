@@ -259,15 +259,20 @@ canvas {
 
 
 
+/* ------------------------------- */
+/* FIXED & CLEAN CAROUSEL ANIMATION */
+/* ------------------------------- */
+
 @keyframes slide-x {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
   100% { transform: translateX(0); }
 }
 
 .animate-slide-x {
-  animation: slide-x 16s infinite ease-in-out;
+  animation: slide-x 15s infinite ease-in-out;
+  display: flex;
 }
+
 

@@ -570,7 +570,7 @@ export function AboutUs() {
 
     {/* Mobile Carousel */}
     <div className="md:hidden overflow-hidden relative mt-10">
-      <div className="flex animate-slide-x gap-6" style={{ width: "400%" }}>
+      <div className="flex animate-slide-x gap-6">
         {[
           { name: "Aryo Club", link: "https://aryo.club", logo: "/partners/aryo.png" },
           { name: "Adstool", link: "https://adstool.in", logo: "/partners/adstool.png" },
@@ -593,41 +593,6 @@ export function AboutUs() {
               alt={p.name}
               className="w-28 h-28 object-contain opacity-90"
             />
-          </a>
-        ))}
-      </div>
-    </div>
-
-
-    {/* Tracking Tools Section */}
-    <div className="mt-24 text-center">
-      <h3 className="text-3xl md:text-4xl font-semibold mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-        Live Tracking Tools
-      </h3>
-
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-10">
-        {[
-          { name: "Offer18", link: "https://offer18.com", logo: "/tools/offer18.png" },
-          { name: "AppFlyer", link: "https://appsflyer.com", logo: "/tools/appflyer.png" },
-        ].map((tool, i) => (
-          <a
-            key={i}
-            href={tool.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              glass rounded-2xl p-6 hover:scale-105 transition-all duration-300
-              border border-purple-400/10 hover:border-purple-400/40
-            "
-          >
-            <img
-              src={tool.logo}
-              alt={tool.name}
-              className="w-20 h-20 mx-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-            />
-            <div className="mt-4 text-sm text-muted-foreground">
-              {tool.name}
-            </div>
           </a>
         ))}
       </div>

@@ -46,7 +46,8 @@ export function Home({ onNavigate }: HomeProps) {
 {
   icon: Shield,
   title: "Live Tracking Tools",
-  description: "Monitor your referrals and conversions with real-time dashboard & extra tools.",
+  description:
+    "Track your conversions with real-time dashboard insights powered by Offer18 and AppsFlyer.",
   color: "from-pink-500 to-purple-500",
   glow: "glow-pink",
 },
@@ -168,7 +169,7 @@ export function Home({ onNavigate }: HomeProps) {
       </section>
 
 
-      {/* Finance Categories Intro */}
+{/* Finance Categories Intro */}
 <section className="py-20">
   <div className="container mx-auto px-4 lg:px-8 text-center space-y-6">
     <h2 className="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
@@ -179,14 +180,15 @@ export function Home({ onNavigate }: HomeProps) {
       Explore multiple financial services including <span className="text-cyan-400">Demat</span>, 
       <span className="text-purple-400"> Savings</span>, and 
       <span className="text-pink-400"> Affiliate Programs</span>.  
-      Har category me multiple offers available hain so you can explore and choose the best.
+      Each category includes multiple offers so you can explore and choose the best.
     </p>
 
     <p className="text-lg text-cyan-400 font-medium">
-      Affiliate me — Sell & Earn without any investment.
+      Affiliate – Sell & Earn without any investment.
     </p>
   </div>
 </section>
+
 
 
       {/* Features Section */}
@@ -331,7 +333,6 @@ export function Home({ onNavigate }: HomeProps) {
     <div className="md:hidden overflow-hidden relative">
       <div
         className="flex animate-slide-x gap-6"
-        style={{ width: "300%" }}
       >
         {[ 
           {
