@@ -526,82 +526,116 @@ export function AboutUs() {
     <div className="text-center mb-20">
       <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full mb-6">
         <Heart className="w-4 h-4 text-cyan-400" />
-        <span className="text-sm text-cyan-400">Our Partners</span>
+        <span className="text-sm text-cyan-400">Our Tie-Ups</span>
       </div>
 
-      <h2 className="text-4xl md:text-6xl mb-6">
-        <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Trusted Collaborations
-        </span>
+      <h2 className="text-4xl md:text-6xl mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        Trusted Partnerships
       </h2>
-
       <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Official tie-ups with verified financial institutions and digital platforms.
+        Official collaborations with leading financial and technology platforms.
       </p>
     </div>
 
-    {/* Logos Grid */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+    {/* Desktop Grid */}
+    <div className="hidden md:grid grid-cols-4 gap-10">
       {[
-        {
-          name: "Partner 1",
-          logoSrc: "/partners/partner1.png", 
-          link: "https://partner1.com",
-        },
-        {
-          name: "Partner 2",
-          logoSrc: "/partners/partner2.png",
-          link: "https://partner2.com",
-        },
-        {
-          name: "Partner 3",
-          logoSrc: "/partners/partner3.png",
-          link: "https://partner3.com",
-        },
-        {
-          name: "Partner 4",
-          logoSrc: "/partners/partner4.png",
-          link: "https://partner4.com",
-        },
-        {
-          name: "Partner 5",
-          logoSrc: "/partners/partner5.png",
-          link: "https://partner5.com",
-        },
-        {
-          name: "Partner 6",
-          logoSrc: "/partners/partner6.png",
-          link: "https://partner6.com",
-        },
-      ].map((partner, i) => (
+        { name: "Aryo Club", link: "https://aryo.club", logo: "/partners/aryo.png" },
+        { name: "Adstool", link: "https://adstool.in", logo: "/partners/adstool.png" },
+        { name: "BankSathi", link: "https://banksathi.com", logo: "/partners/banksathi.png" },
+        { name: "Voadvisor", link: "https://voadvisor.com", logo: "/partners/voadvisor.png" },
+      ].map((p, i) => (
         <a
           key={i}
-          href={partner.link}
+          href={p.link}
           target="_blank"
           rel="noopener noreferrer"
           className="
-            glass rounded-2xl p-8 flex items-center justify-center 
-            hover:scale-105 transition-all duration-300 cursor-pointer
-            border border-cyan-400/10 hover:border-cyan-400/30
+            glass rounded-3xl p-8 flex items-center justify-center
+            hover:scale-110 transition-all duration-300
+            border border-cyan-400/10 hover:border-cyan-400/40
             shadow-[0_0_20px_rgba(0,0,0,0.1)]
-            hover:shadow-[0_0_40px_rgba(0,255,255,0.25)]
-            dark:hover:shadow-[0_0_40px_rgba(0,255,255,0.5)]
+            hover:shadow-[0_0_50px_rgba(34,211,238,0.5)]
+            dark:hover:shadow-[0_0_60px_rgba(34,211,238,0.8)]
           "
         >
-          {/* Logo */}
           <img
-            src={partner.logoSrc}
-            alt={partner.name}
-            className="
-              w-24 h-24 object-contain 
-              opacity-80 group-hover:opacity-100 transition-opacity
-            "
+            src={p.logo}
+            alt={p.name}
+            className="w-28 h-28 object-contain transition-all duration-300 opacity-80 hover:opacity-100"
           />
         </a>
       ))}
     </div>
+
+    {/* Mobile Carousel */}
+    <div className="md:hidden overflow-hidden relative mt-10">
+      <div className="flex animate-slide-x gap-6" style={{ width: "400%" }}>
+        {[
+          { name: "Aryo Club", link: "https://aryo.club", logo: "/partners/aryo.png" },
+          { name: "Adstool", link: "https://adstool.in", logo: "/partners/adstool.png" },
+          { name: "BankSathi", link: "https://banksathi.com", logo: "/partners/banksathi.png" },
+          { name: "Voadvisor", link: "https://voadvisor.com", logo: "/partners/voadvisor.png" },
+        ].map((p, i) => (
+          <a
+            key={i}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              min-w-[80%] glass rounded-3xl p-8 flex items-center justify-center
+              border border-cyan-400/10
+              shadow-[0_0_20px_rgba(0,0,0,0.1)]
+            "
+          >
+            <img
+              src={p.logo}
+              alt={p.name}
+              className="w-28 h-28 object-contain opacity-90"
+            />
+          </a>
+        ))}
+      </div>
+    </div>
+
+
+    {/* Tracking Tools Section */}
+    <div className="mt-24 text-center">
+      <h3 className="text-3xl md:text-4xl font-semibold mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        Live Tracking Tools
+      </h3>
+
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-10">
+        {[
+          { name: "Offer18", link: "https://offer18.com", logo: "/tools/offer18.png" },
+          { name: "AppFlyer", link: "https://appsflyer.com", logo: "/tools/appflyer.png" },
+        ].map((tool, i) => (
+          <a
+            key={i}
+            href={tool.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              glass rounded-2xl p-6 hover:scale-105 transition-all duration-300
+              border border-purple-400/10 hover:border-purple-400/40
+            "
+          >
+            <img
+              src={tool.logo}
+              alt={tool.name}
+              className="w-20 h-20 mx-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+            />
+            <div className="mt-4 text-sm text-muted-foreground">
+              {tool.name}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 
       {/* Timeline */}

@@ -257,21 +257,27 @@ canvas {
   100% { background-position: 200px 200px, 240px 260px, 330px 470px, 270px 300px, 350px 250px; }
 }
 
-@keyframes slide-x {
-  0% {
-    transform: translateX(0);
-  }
-  33% {
-    transform: translateX(-100%);
-  }
-  66% {
-    transform: translateX(-200%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
+
 
 .animate-slide-x {
   animation: slide-x 12s infinite ease-in-out;
 }
+
+@keyframes slide-x {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-slide-x {
+  animation: slide-x 16s infinite ease-in-out;
+}
+
+
+
+.animate-slide-x {
+  animation: slide-x 16s infinite ease-in-out;
+}
+
