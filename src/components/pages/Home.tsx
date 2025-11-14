@@ -1,6 +1,8 @@
 import { Button } from "../ui/button";
 import { ArrowRight, Shield, Zap, TrendingUp, Sparkles } from "lucide-react";
 import { ReferralChain3D } from "../ReferralChain3D";
+import { Banknote, PiggyBank, LineChart } from "lucide-react";
+
 
 interface HomeProps {
   onNavigate: (page: "home" | "about" | "how-it-works" | "contact" | "auth") => void;
@@ -169,25 +171,67 @@ export function Home({ onNavigate }: HomeProps) {
       </section>
 
 
-{/* Finance Categories Intro */}
-<section className="py-20">
-  <div className="container mx-auto px-4 lg:px-8 text-center space-y-6">
+{/* Finance Categories Section */}
+<section className="py-24">
+  <div className="container mx-auto px-4 lg:px-8 text-center space-y-12">
+
     <h2 className="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
       Finance Categories
     </h2>
 
     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-      Explore multiple financial services including <span className="text-cyan-400">Demat</span>, 
-      <span className="text-purple-400"> Savings</span>, and 
-      <span className="text-pink-400"> Affiliate Programs</span>.  
-      Each category includes multiple offers so you can explore and choose the best.
+      Explore financial services including <span className="text-cyan-400 font-medium">Demat</span>,
+      <span className="text-purple-400 font-medium"> Savings</span> and 
+      <span className="text-pink-400 font-medium"> Affiliate Programs</span>.
+      Each category contains multiple offers for you to explore.
     </p>
 
-    <p className="text-lg text-cyan-400 font-medium">
-      Affiliate – Sell & Earn without any investment.
-    </p>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
+      
+      {/* Demat */}
+      <div className="glass p-10 rounded-3xl hover:scale-[1.05] transition-all duration-300 group">
+        <div className="mb-6 flex justify-center">
+          <Banknote className="w-16 h-16 text-cyan-400 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,1)] transition-all" />
+        </div>
+        <h3 className="text-2xl font-semibold mb-3 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          Demat
+        </h3>
+        <p className="text-muted-foreground text-base">
+          Open a Demat account and explore verified financial offers curated for earning.
+        </p>
+      </div>
+
+      {/* Savings */}
+      <div className="glass p-10 rounded-3xl hover:scale-[1.05] transition-all duration-300 group">
+        <div className="mb-6 flex justify-center">
+          <PiggyBank className="w-16 h-16 text-purple-400 group-hover:drop-shadow-[0_0_10px_rgba(192,132,252,1)] transition-all" />
+        </div>
+        <h3 className="text-2xl font-semibold mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          Savings
+        </h3>
+        <p className="text-muted-foreground text-base">
+          Choose from multiple saving and cashback programs to maximise your returns.
+        </p>
+      </div>
+
+      {/* Affiliate */}
+      <div className="glass p-10 rounded-3xl hover:scale-[1.05] transition-all duration-300 group">
+        <div className="mb-6 flex justify-center">
+          <LineChart className="w-16 h-16 text-pink-400 group-hover:drop-shadow-[0_0_10px_rgba(236,72,153,1)] transition-all" />
+        </div>
+        <h3 className="text-2xl font-semibold mb-3 bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent">
+          Affiliate (Sell & Earn)
+        </h3>
+        <p className="text-muted-foreground text-base">
+          Earn instantly as an affiliate — no investment required. Sell and earn seamlessly.
+        </p>
+      </div>
+
+    </div>
+
   </div>
 </section>
+
 
 
 

@@ -271,8 +271,9 @@ canvas {
 }
 
 .animate-slide-x {
-  animation: slide-x 15s infinite ease-in-out;
+  animation: slide-x 25s infinite ease-in-out;
   display: flex;
 }
+
 
 
