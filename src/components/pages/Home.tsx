@@ -11,7 +11,7 @@ export function Home({ onNavigate }: HomeProps) {
     {
       icon: Zap,
       title: "Instant Payouts",
-      description: "Real-time earnings tracked and paid instantly to your wallet",
+      description: "Instant wallet withdrawals with real-time earnings tracking",
       color: "from-cyan-500 to-blue-500",
       glow: "glow-cyan",
     },
@@ -29,6 +29,34 @@ export function Home({ onNavigate }: HomeProps) {
       color: "from-pink-500 to-amber-500",
       glow: "glow-pink",
     },
+    {
+  icon: Zap,
+  title: "Sell & Earn (No Investment)",
+  description: "Start earning instantly as an affiliate—no investment required.",
+  color: "from-cyan-500 to-purple-500",
+  glow: "glow-cyan",
+},
+{
+  icon: TrendingUp,
+  title: "Timely Reports",
+  description: "Daily, weekly, and monthly performance reports for complete clarity.",
+  color: "from-purple-500 to-cyan-500",
+  glow: "glow-purple",
+},
+{
+  icon: Shield,
+  title: "Live Tracking Tools",
+  description: "Monitor your referrals and conversions with real-time dashboard & extra tools.",
+  color: "from-pink-500 to-purple-500",
+  glow: "glow-pink",
+},
+{
+  icon: Sparkles,
+  title: "Customised Payouts",
+  description: "Bulk earners get customised payout cycles and exclusive support.",
+  color: "from-cyan-500 to-pink-500",
+  glow: "glow-cyan",
+}
   ];
 
   return (
@@ -87,6 +115,7 @@ export function Home({ onNavigate }: HomeProps) {
                   How It Works
                 </Button>
               </div>
+              
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-8">
@@ -138,6 +167,28 @@ export function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
+
+      {/* Finance Categories Intro */}
+<section className="py-20">
+  <div className="container mx-auto px-4 lg:px-8 text-center space-y-6">
+    <h2 className="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+      Finance Categories
+    </h2>
+
+    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      Explore multiple financial services including <span className="text-cyan-400">Demat</span>, 
+      <span className="text-purple-400"> Savings</span>, and 
+      <span className="text-pink-400"> Affiliate Programs</span>.  
+      Har category me multiple offers available hain so you can explore and choose the best.
+    </p>
+
+    <p className="text-lg text-cyan-400 font-medium">
+      Affiliate me — Sell & Earn without any investment.
+    </p>
+  </div>
+</section>
+
+
       {/* Features Section */}
       <section className="py-32 relative">
         <div className="container mx-auto px-4 lg:px-8">
@@ -188,6 +239,165 @@ export function Home({ onNavigate }: HomeProps) {
           </div>
         </div>
       </section>
+
+{/* Testimonials Section */}
+<section className="py-28 relative">
+  <div className="container mx-auto px-4 lg:px-8">
+
+    {/* Header */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-semibold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        What Our Users Say
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Real experiences from people who earn, track, and grow with CampaignWala.
+      </p>
+    </div>
+
+    {/* Desktop / Tablet Grid */}
+    <div className="hidden md:grid md:grid-cols-3 gap-10">
+      {[
+        {
+          name: "Rohit S.",
+          role: "Full-Time Affiliate Partner",
+          review:
+            "Instant withdrawals and real-time tracking helped me scale fast. Reports are accurate and the payout system is super smooth.",
+        },
+        {
+          name: "Neha K.",
+          role: "Digital Marketer",
+          review:
+            "Futuristic UI and effortless tools. The variety of offers is crazy and I love how everything is transparent and trackable.",
+        },
+        {
+          name: "Amit Verma",
+          role: "Finance Creator",
+          review:
+            "Custom payouts made bulk tasks easy. Live tools + detailed reports make the platform reliable for long-term work.",
+        },
+      ].map((item, i) => (
+        <div
+          key={i}
+          className="
+            group glass p-8 rounded-3xl border border-cyan-400/10
+            transition-all duration-300 relative cursor-pointer
+            hover:scale-[1.04]
+            shadow-[0_0_20px_rgba(0,0,0,0.1)]
+            hover:shadow-[0_0_40px_rgba(0,255,255,0.25)]
+            dark:hover:shadow-[0_0_40px_rgba(0,255,255,0.4)]
+            backdrop-blur-xl
+          "
+        >
+          {/* Glow ring */}
+          <div
+            className="
+              absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
+              bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10
+              blur-xl transition-opacity
+            "
+          />
+
+          {/* Star Rating */}
+          <div className="relative flex space-x-1 mb-4">
+            {[...Array(5)].map((_, index) => (
+              <span
+                key={index}
+                className="text-yellow-400 text-xl drop-shadow-lg"
+              >
+                ★
+              </span>
+            ))}
+          </div>
+
+          {/* Review */}
+          <p className="relative text-lg text-muted-foreground mb-6 leading-relaxed">
+            “{item.review}”
+          </p>
+
+          {/* User */}
+          <div className="relative">
+            <div className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              {item.name}
+            </div>
+            <div className="text-sm text-muted-foreground mt-1">
+              {item.role}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Mobile Slider */}
+    <div className="md:hidden overflow-hidden relative">
+      <div
+        className="flex animate-slide-x gap-6"
+        style={{ width: "300%" }}
+      >
+        {[ 
+          {
+            name: "Rohit S.",
+            role: "Full-Time Affiliate Partner",
+            review:
+              "Instant withdrawals and real-time tracking helped me scale fast. Reports are accurate and the payout system is super smooth.",
+          },
+          {
+            name: "Neha K.",
+            role: "Digital Marketer",
+            review:
+              "Futuristic UI and effortless tools. The variety of offers is crazy and I love how everything is transparent and trackable.",
+          },
+          {
+            name: "Amit Verma",
+            role: "Finance Creator",
+            review:
+              "Custom payouts made bulk tasks easy. Live tools + detailed reports make the platform reliable for long-term work.",
+          },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="
+              min-w-[85%] glass p-8 rounded-3xl border border-cyan-400/10
+              transition-all duration-300 relative cursor-pointer
+              shadow-[0_0_20px_rgba(0,0,0,0.1)]
+              hover:shadow-[0_0_40px_rgba(0,255,255,0.25)]
+              dark:hover:shadow-[0_0_40px_rgba(0,255,255,0.4)]
+              backdrop-blur-xl
+            "
+          >
+            {/* Star Rating */}
+            <div className="relative flex space-x-1 mb-4">
+              {[...Array(5)].map((_, index) => (
+                <span
+                  key={index}
+                  className="text-yellow-400 text-xl drop-shadow-lg"
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+
+            <p className="relative text-lg text-muted-foreground mb-6 leading-relaxed">
+              “{item.review}”
+            </p>
+
+            <div className="relative">
+              <div className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                {item.name}
+              </div>
+              <div className="text-sm text-muted-foreground mt-1">
+                {item.role}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
 
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden">

@@ -516,6 +516,94 @@ export function AboutUs() {
         </div>
       </section>
 
+{/* Partnerships & Tie-Ups */}
+<section className="py-32 relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" />
+
+  <div className="container mx-auto px-4 lg:px-8 relative z-10">
+
+    {/* Header */}
+    <div className="text-center mb-20">
+      <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full mb-6">
+        <Heart className="w-4 h-4 text-cyan-400" />
+        <span className="text-sm text-cyan-400">Our Partners</span>
+      </div>
+
+      <h2 className="text-4xl md:text-6xl mb-6">
+        <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          Trusted Collaborations
+        </span>
+      </h2>
+
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Official tie-ups with verified financial institutions and digital platforms.
+      </p>
+    </div>
+
+    {/* Logos Grid */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+      {[
+        {
+          name: "Partner 1",
+          logoSrc: "/partners/partner1.png", 
+          link: "https://partner1.com",
+        },
+        {
+          name: "Partner 2",
+          logoSrc: "/partners/partner2.png",
+          link: "https://partner2.com",
+        },
+        {
+          name: "Partner 3",
+          logoSrc: "/partners/partner3.png",
+          link: "https://partner3.com",
+        },
+        {
+          name: "Partner 4",
+          logoSrc: "/partners/partner4.png",
+          link: "https://partner4.com",
+        },
+        {
+          name: "Partner 5",
+          logoSrc: "/partners/partner5.png",
+          link: "https://partner5.com",
+        },
+        {
+          name: "Partner 6",
+          logoSrc: "/partners/partner6.png",
+          link: "https://partner6.com",
+        },
+      ].map((partner, i) => (
+        <a
+          key={i}
+          href={partner.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            glass rounded-2xl p-8 flex items-center justify-center 
+            hover:scale-105 transition-all duration-300 cursor-pointer
+            border border-cyan-400/10 hover:border-cyan-400/30
+            shadow-[0_0_20px_rgba(0,0,0,0.1)]
+            hover:shadow-[0_0_40px_rgba(0,255,255,0.25)]
+            dark:hover:shadow-[0_0_40px_rgba(0,255,255,0.5)]
+          "
+        >
+          {/* Logo */}
+          <img
+            src={partner.logoSrc}
+            alt={partner.name}
+            className="
+              w-24 h-24 object-contain 
+              opacity-80 group-hover:opacity-100 transition-opacity
+            "
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+
       {/* Timeline */}
       <section className="py-32">
         <div className="container mx-auto px-4 lg:px-8">

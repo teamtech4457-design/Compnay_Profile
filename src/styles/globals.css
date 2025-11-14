@@ -256,3 +256,22 @@ canvas {
   0% { background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 150px 50px; }
   100% { background-position: 200px 200px, 240px 260px, 330px 470px, 270px 300px, 350px 250px; }
 }
+
+@keyframes slide-x {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-x {
+  animation: slide-x 12s infinite ease-in-out;
+}
