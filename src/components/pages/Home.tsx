@@ -299,7 +299,7 @@ export function Home({ onNavigate }: HomeProps) {
         What Our Users Say
       </h2>
       <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Real experiences from people who earn, track, and grow with CampaignWala.
+        Real experiences from people who earn, track, and grow with Campaignwala.
       </p>
     </div>
 
@@ -453,7 +453,7 @@ export function Home({ onNavigate }: HomeProps) {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Join thousands of users already earning with Campaign Waala
+              Join thousands of users already earning with Campaignwala
             </p>
             <Button
               size="lg"

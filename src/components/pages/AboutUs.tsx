@@ -45,7 +45,7 @@ export function AboutUs() {
             <div className="space-y-6">
               <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-                <span className="text-sm text-cyan-400">About Campaign Waala</span>
+                <span className="text-sm text-cyan-400">About Campaignwala</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl">

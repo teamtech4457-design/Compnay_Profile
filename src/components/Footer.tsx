@@ -137,7 +137,7 @@ const legalLinks: LegalLink[] = [
                   <div>
                     <div className="text-xs text-muted-foreground mb-1">Email</div>
                     <a href="mailto:support@campaignwaala.in" className="text-sm hover:text-cyan-400 transition-colors">
-                      support@campaignwaala.in
+                      support@campaignwala.in
                     </a>
                   </div>
                 </li>
@@ -167,7 +167,7 @@ const legalLinks: LegalLink[] = [
           <div className="mt-16 pt-8 border-t border-purple-500/20">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-sm text-muted-foreground">
-                &copy; {currentYear} Campaignwaala. All rights reserved.
+                &copy; {currentYear} Campaignwala. All rights reserved.
               </p>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Sparkles className="w-4 h-4 text-cyan-400" />
@@ -275,21 +275,21 @@ const legalLinks: LegalLink[] = [
             <div className="p-6 overflow-y-auto max-h-[70vh]">
               <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
                 <p className="text-cyan-400 font-semibold">
-                  Campaignwaala Platform Terms of Service
+                  Campaignwala Platform Terms of Service
                 </p>
                 <p>
-                  These Terms of Service ("Terms") govern your use and access to the Campaignwaala platform (website and mobile app). By accessing, registering, or using any part of our Platform, you acknowledge and agree to these Terms, our Privacy Policy, and all applicable laws and regulations.
+                  These Terms of Service ("Terms") govern your use and access to the Campaignwala platform (website and mobile app). By accessing, registering, or using any part of our Platform, you acknowledge and agree to these Terms, our Privacy Policy, and all applicable laws and regulations.
                 </p>
                 <div>
                   <h3 className="text-cyan-400 font-semibold mb-3">1. Acceptance of Terms</h3>
                   <p>
-                    By using Campaignwaala, you agree to be bound by these Terms as well as our Privacy Policy. If you do not agree, please refrain from using our Platform.
+                    By using Campaignwala, you agree to be bound by these Terms as well as our Privacy Policy. If you do not agree, please refrain from using our Platform.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-cyan-400 font-semibold mb-3">2. Service Overview</h3>
                   <p>
-                    Campaignwaala is a technology platform that enables agents to refer and sell various financial (Demat accounts, banking services, etc.) and non-financial products. You may earn commissions or rewards for successful referrals and sales as specified on the Platform.
+                    Campaignwala is a technology platform that enables agents to refer and sell various financial (Demat accounts, banking services, etc.) and non-financial products. You may earn commissions or rewards for successful referrals and sales as specified on the Platform.
                   </p>
                 </div>
                 <div>
@@ -313,7 +313,7 @@ const legalLinks: LegalLink[] = [
                 <div>
                   <h3 className="text-cyan-400 font-semibold mb-3">6. Intellectual Property</h3>
                   <p>
-                    All trademarks, content, source code, digital assets, and brand materials of Campaignwaala remain the exclusive property of the company. Unauthorized reproduction, distribution, or modification is prohibited.
+                    All trademarks, content, source code, digital assets, and brand materials of Campaignwala remain the exclusive property of the company. Unauthorized reproduction, distribution, or modification is prohibited.
                   </p>
                 </div>
                 <div>
@@ -325,19 +325,19 @@ const legalLinks: LegalLink[] = [
                 <div>
                   <h3 className="text-cyan-400 font-semibold mb-3">8. Limitation of Liability</h3>
                   <p>
-                    All services are offered "as is" and "as available." Campaignwaala is not liable for any indirect, incidental, consequential, or technical damages arising from the use of the Platform.
+                    All services are offered "as is" and "as available." Campaignwala is not liable for any indirect, incidental, consequential, or technical damages arising from the use of the Platform.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-cyan-400 font-semibold mb-3">9. Third-Party Links & Apps</h3>
                   <p>
-                    The Platform may include links or integrations with third-party websites or apps. Campaignwaala does not endorse or take responsibility for their content, privacy, or security practices.
+                    The Platform may include links or integrations with third-party websites or apps. Campaignwala does not endorse or take responsibility for their content, privacy, or security practices.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-cyan-400 font-semibold mb-3">10. Termination</h3>
                   <p>
-                    In case of misuse, violation, fraud, or illegal activity, Campaignwaala reserves the right to suspend, terminate, or restrict your account. Company records may be retained as required by law after termination.
+                    In case of misuse, violation, fraud, or illegal activity, Campaignwala reserves the right to suspend, terminate, or restrict your account. Company records may be retained as required by law after termination.
                   </p>
                 </div>
                 <div>
@@ -395,7 +395,7 @@ const legalLinks: LegalLink[] = [
             <div className="p-6 overflow-y-auto max-h-[70vh]">
               <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
                 <p>
-                  This Cookie Policy explains how Campaignwaala uses cookies and similar technologies on our platform (website and mobile app). By continuing to use our services, you consent to the use of cookies as described here.
+                  This Cookie Policy explains how Campaignwala uses cookies and similar technologies on our platform (website and mobile app). By continuing to use our services, you consent to the use of cookies as described here.
                 </p>
                 <p>
                   Cookies are small data files stored on your device by your browser when you visit our platform. They help us recognise your device, enhance your user experience, improve our services, and provide secure access.
@@ -455,19 +455,19 @@ const legalLinks: LegalLink[] = [
             <div className="p-6 overflow-y-auto max-h-[70vh]">
               <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">
                 <p>
-                  Campaignwaala is committed to protecting user data in line with applicable Indian data privacy laws, including the Information Technology Act, 2000 and associated rules.
+                  Campaignwala is committed to protecting user data in line with applicable Indian data privacy laws, including the Information Technology Act, 2000 and associated rules.
                 </p>
                 <p>
                   We implement technical, physical, and administrative safeguards, including encryption, firewalls, secure servers, and access controls to protect personal information from unauthorized access, disclosure, alteration, or destruction.
                 </p>
                 <p>
-                  Campaignwaala complies with relevant financial, KYC, anti-money laundering standards, and TRAI guidelines to ensure lawful and ethical operations.
+                  Campaignwala complies with relevant financial, KYC, anti-money laundering standards, and TRAI guidelines to ensure lawful and ethical operations.
                 </p>
                 <p>
                   Users must protect their own account credentials and promptly report any suspected security breaches or unauthorized access.
                 </p>
                 <p>
-                  In case of data breach affecting your personal information, Campaignwaala will notify affected parties as required by law.
+                  In case of data breach affecting your personal information, Campaignwala will notify affected parties as required by law.
                 </p>
                 <p>
                   We partner with service providers adhering to strict security standards but are not responsible for their practices. Users should review third-party policies carefully.

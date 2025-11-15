@@ -34,7 +34,7 @@ export function ContactSupport() {
 
   const faqs = [
     {
-      question: "How do I start earning with Campaign Waala?",
+      question: "How do I start earning with Campaignwala?",
       answer:
         "Simply sign up for a free account, browse available campaigns, select the ones that match your audience, and start sharing your unique referral links. You'll earn commissions instantly when someone converts through your link.",
     },
@@ -69,7 +69,7 @@ export function ContactSupport() {
     {
       icon: Mail,
       title: "Email Support",
-      value: "support@campaignwaala.in",
+      value: "support@campaignwala.in",
       description: "24/7 email support",
       color: "from-cyan-500 to-blue-500",
     },
