@@ -52,7 +52,7 @@ const legalLinks: LegalLink[] = [
                   </div>
                   <div>
                     <div className="text-lg bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                      Campaignwaala
+                      Campaignwala
                     </div>
                     <div className="text-xs text-muted-foreground">Decentralized Finance</div>
                   </div>
