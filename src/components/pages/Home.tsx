@@ -2,11 +2,8 @@ import { Button } from "../ui/button";
 import { ArrowRight, Shield, Zap, TrendingUp, Sparkles } from "lucide-react";
 import { ReferralChain3D } from "../ReferralChain3D";
 import { Banknote, PiggyBank, LineChart } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/swiper.css";
-import "swiper/css"
-import "swiper/css/pagination";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 
 interface HomeProps {
@@ -377,74 +374,66 @@ export function Home({ onNavigate }: HomeProps) {
         </div>
       ))}
     </div>
-    {/* Mobile Slider (Swiper) */}
+    {/* Mobile Slider (Carousel) */}
 <div className="md:hidden">
-  <Swiper
-    modules={[Autoplay, Pagination]}
-    spaceBetween={20}
-    slidesPerView={1}
-    loop={true}
-    autoplay={{
-      delay: 2500,
-      disableOnInteraction: false,
-    }}
-    pagination={{ clickable: true }}
+  <Carousel
+    opts={{ loop: true }}
+    plugins={[Autoplay({ delay: 2500 })]}
     className="w-full"
   >
-    {[
-      {
-        name: "Rohit S.",
-        role: "Full-Time Affiliate Partner",
-        review:
-          "Instant withdrawals and real-time tracking helped me scale fast. Reports are accurate and the payout system is super smooth.",
-      },
-      {
-        name: "Neha K.",
-        role: "Digital Marketer",
-        review:
-          "Futuristic UI and effortless tools. The variety of offers is crazy and I love how everything is transparent and trackable.",
-      },
-      {
-        name: "Amit Verma",
-        role: "Finance Creator",
-        review:
-          "Custom payouts made bulk tasks easy. Live tools + detailed reports make the platform reliable for long-term work.",
-      },
-    ].map((item, i) => (
-      <SwiperSlide key={i}>
-        <div
-          className="
-            glass p-8 rounded-3xl border border-cyan-400/10
-            shadow-[0_0_20px_rgba(0,0,0,0.1)]
-            backdrop-blur-xl
-            mx-4
-          "
-        >
-          {/* Stars */}
-          <div className="flex space-x-1 mb-4">
-            {[...Array(5)].map((_, index) => (
-              <span key={index} className="text-yellow-400 text-xl">
-                ★
-              </span>
-            ))}
-          </div>
-
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            “{item.review}”
-          </p>
-
-          <div>
-            <div className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              {item.name}
+    <CarouselContent>
+      {[
+        {
+          name: "Rohit S.",
+          role: "Full-Time Affiliate Partner",
+          review:
+            "Instant withdrawals and real-time tracking helped me scale fast. Reports are accurate and the payout system is super smooth.",
+        },
+        {
+          name: "Neha K.",
+          role: "Digital Marketer",
+          review:
+            "Futuristic UI and effortless tools. The variety of offers is crazy and I love how everything is transparent and trackable.",
+        },
+        {
+          name: "Amit Verma",
+          role: "Finance Creator",
+          review:
+            "Custom payouts made bulk tasks easy. Live tools + detailed reports make the platform reliable for long-term work.",
+        },
+      ].map((item, i) => (
+        <CarouselItem key={i} className="px-4">
+          <div
+            className="
+              glass p-8 rounded-3xl border border-cyan-400/10
+              shadow-[0_0_20px_rgba(0,0,0,0.1)]
+              backdrop-blur-xl
+            "
+          >
+            <div className="flex space-x-1 mb-4">
+              {[...Array(5)].map((_, index) => (
+                <span key={index} className="text-yellow-400 text-xl">★</span>
+              ))}
             </div>
-            <div className="text-sm text-muted-foreground mt-1">
-              {item.role}
+
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              “{item.review}”
+            </p>
+
+            <div>
+              <div className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                {item.name}
+              </div>
+              <div className="text-sm text-muted-foreground mt-1">
+                {item.role}
+              </div>
             </div>
           </div>
-        </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+  </Carousel>
+
 </div>
   </div>
 </section>
