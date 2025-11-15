@@ -518,27 +518,15 @@ export function AboutUs() {
 
 {/* Partnerships & Tie-Ups */}
 <section className="py-32 relative overflow-hidden">
-  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" />
-
   <div className="container mx-auto px-4 lg:px-8 relative z-10">
 
-    {/* Header */}
-    <div className="text-center mb-20">
-      <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full mb-6">
-        <Heart className="w-4 h-4 text-cyan-400" />
-        <span className="text-sm text-cyan-400">Our Tie-Ups</span>
-      </div>
+    <h2 className="text-4xl md:text-6xl mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent text-center">
+      Trusted Partnerships
+    </h2>
 
-      <h2 className="text-4xl md:text-6xl mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-        Trusted Partnerships
-      </h2>
-      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Official collaborations with leading financial and technology platforms.
-      </p>
-    </div>
+    {/* Grid Instead of Carousel */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 place-items-center">
 
-    {/* Desktop Grid */}
-    <div className="hidden md:grid grid-cols-4 gap-10">
       {[
         { name: "Aryo Club", link: "https://aryo.club", logo: "/partners/aryo.png" },
         { name: "Adstool", link: "https://adstool.in", logo: "/partners/adstool.png" },
@@ -550,74 +538,23 @@ export function AboutUs() {
           href={p.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="
-            glass rounded-3xl p-8 flex items-center justify-center
-            hover:scale-110 transition-all duration-300
-            border border-cyan-400/10 hover:border-cyan-400/40
-            shadow-[0_0_20px_rgba(0,0,0,0.1)]
-            hover:shadow-[0_0_50px_rgba(34,211,238,0.5)]
-            dark:hover:shadow-[0_0_60px_rgba(34,211,238,0.8)]
-          "
+          className="glass rounded-3xl p-6 flex flex-col items-center hover:scale-105 transition-all border border-cyan-400/10 shadow-lg backdrop-blur-xl"
         >
           <img
             src={p.logo}
             alt={p.name}
-            className="w-28 h-28 object-contain transition-all duration-300 opacity-80 hover:opacity-100"
+            className="w-20 h-20 object-contain mb-4"
           />
+          <div className="text-lg font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            {p.name}
+          </div>
         </a>
       ))}
     </div>
-{/* Partnerships & Tie-Ups */}
-<section className="py-32 relative overflow-hidden">
-  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5" />
-
-  <div className="container mx-auto px-4 lg:px-8 relative z-10">
-
-    {/* Header */}
-    <div className="text-center mb-20">
-      <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full mb-6">
-        <Heart className="w-4 h-4 text-cyan-400" />
-        <span className="text-sm text-cyan-400">Our Tie-Ups</span>
-      </div>
-
-      <h2 className="text-4xl md:text-6xl mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-        Trusted Partnerships
-      </h2>
-      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Official collaborations with leading financial and technology platforms.
-      </p>
-    </div>
-
-    {/* GRID — all screens */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 place-items-center">
-      {[
-        { name: "Aryo Club", logo: "/partners/aryo.png" },
-        { name: "Adstool", logo: "/partners/adstool.png" },
-        { name: "BankSathi", logo: "/partners/banksathi.png" },
-        { name: "Voadvisor", logo: "/partners/voadvisor.png" },
-      ].map((p, i) => (
-        <div key={i} className="flex flex-col items-center space-y-4">
-          {/* circular logo */}
-          <div className="w-32 h-32 rounded-full glass border border-cyan-400/20 flex items-center justify-center hover:scale-110 transition-all">
-            <img
-              src={p.logo}
-              alt={p.name}
-              className="w-20 h-20 rounded-full object-contain opacity-90"
-            />
-          </div>
-
-          <p className="text-sm text-muted-foreground">{p.name}</p>
-        </div>
-      ))}
-    </div>
 
   </div>
 </section>
 
-
-
-  </div>
-</section>
 
 
 
