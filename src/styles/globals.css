@@ -283,4 +283,12 @@ canvas {
   scrollbar-width: none;
 }
 
+/* Force CampaignWala brand color correctly */
+.cw-brand {
+  color: black !important;
+}
 
+.dark .cw-brand {
+  color: white !important;
+  text-shadow: 0 0 8px rgba(255,255,255,0.7);
+}
